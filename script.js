@@ -298,6 +298,29 @@ function initWhyStat() {
   }
 }
 
+function initHomeExploreAnimation() {
+  const section = $(".home-explore-section");
+  const content = section && section.querySelector(".home-explore");
+  if (!content || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const animate = () => content.classList.add("is-visible");
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          animate();
+        }
+      },
+      { threshold: 0.2 },
+    );
+    observer.observe(section);
+  } else {
+    animate();
+  }
+}
+
 let translated = false;
 try {
   translated = localStorage.getItem("glang") === "fil";
@@ -364,3 +387,4 @@ themeButton.onclick = () => {
 addEventListener("hashchange", route);
 route();
 initWhyStat();
+initHomeExploreAnimation();

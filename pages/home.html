@@ -21,7 +21,7 @@
       <script src="../components.js"></script>
       <main id="main-content" tabindex="-1">
         <section class="page show" data-p="home">
-          <div class="hero">
+          <div class="hero" style="margin-bottom: 80px">
             <div>
               <span class="tag">para sa kabataan</span>
               <h1>
@@ -33,13 +33,13 @@
               <p class="hero-slogan">
                 Break the stigma. Share the knowledge. Be part of the change.
               </p>
-              <!--<p
+              <p
                 class="lead"
                 data-fil="Maaasahang gabay sa HIV at sexual health. Walang judgment, walang pressure, sa sarili mong pace."
               >
                 Reliable HIV and sexual health info for ages 15–30. No judgment,
                 no pressure, at your own pace.
-              </p> -->
+              </p>
               <div class="hero-actions">
                 <a class="btn" href="learn.html" data-fil="Matuto tayo"
                   >Explore resources</a
@@ -122,7 +122,7 @@
             id="why-it-matters"
             aria-labelledby="why-it-matters-title"
           >
-            <div class="ticker" aria-hidden="true">
+             <div class="ticker" aria-hidden="true">
               <div>
                 get tested / at your own pace / no shame / know your status /
                 para sa kabataan / facts over fear / no pressure / get tested /
@@ -153,39 +153,133 @@
               </p>
             </div>
           </section>
-          <div class="grid staggered">
-            <a class="card c-pink" href="learn.html">
-              <span class="num">01</span>
-              <h3 data-fil="Gusto kong matuto.">I want to learn.</h3>
-              <p>Plain-language guides on HIV, prevention and sexual health.</p>
-              <span class="go">Explore</span>
-            </a>
-            <a class="card c-coral" href="test.html">
-              <span class="num">02</span>
-              <h3 data-fil="Gusto kong magpa-test.">I want to get tested.</h3>
-              <p>Find a testing site near you. Verified details only.</p>
-              <span class="go">Find a site</span>
-            </a>
-            <a class="card c-peri" href="membership.html">
-              <span class="num">03</span>
-              <h3 data-fil="Gusto kong tumulong.">I want to help.</h3>
-              <p>Volunteer, join campaigns, and stand with the community.</p>
-              <span class="go">Join us</span>
-            </a>
-          </div>
-          <hr />
-          <div class="panel">
-            <h3 class="disp" style="font-size: 30px">
-              backed by trusted partners.
-            </h3>
-            <p class="note" style="margin: 8px 0 12px">
-              Placeholders until partnerships are confirmed.
-            </p>
-            <span class="ph">[Partner name]</span>
-            <span class="ph">[Partner name]</span>
-            <span class="ph">[Partner name]</span>
-            <span class="ph">[Partner name]</span>
-          </div>
+          <section class="home-explore-section" aria-labelledby="home-explore-title">
+            <div class="home-explore">
+              <h2 class="disp" id="home-explore-title">
+                find your next step.
+              </h2>
+              <div class="grid staggered home-pathways-grid">
+                <a class="card c-pink" href="learn.html">
+                  <span class="num">01</span>
+                  <h3 data-fil="Gusto kong matuto.">I want to learn.</h3>
+                  <p>
+                    Plain-language guides on HIV, prevention and sexual health.
+                  </p>
+                  <span class="go">Explore</span>
+                </a>
+                <a class="card c-coral" href="test.html">
+                  <span class="num">02</span>
+                  <h3 data-fil="Gusto kong magpa-test.">
+                    I want to get tested.
+                  </h3>
+                  <p>Find a testing site near you. Verified details only.</p>
+                  <span class="go">Find a site</span>
+                </a>
+                <a class="card c-peri" href="membership.html">
+                  <span class="num">03</span>
+                  <h3 data-fil="Gusto kong tumulong.">I want to help.</h3>
+                  <p>
+                    Volunteer, join campaigns, and stand with the community.
+                  </p>
+                  <span class="go">Join us</span>
+                </a>
+              </div>
+            </div>
+          </section>
+          <section
+            class="home-myths-section"
+            aria-labelledby="home-myths-title"
+          >
+            <div class="home-myths-content">
+              <h2 class="disp" id="home-myths-title">myths vs. facts.</h2>
+              <p class="home-myths-intro">
+                The truth is worth sharing. Start with these three.
+              </p>
+              <div class="home-myths-grid">
+                <article class="home-myth-card">
+                  <span class="home-myth-label">myth</span>
+                  <h3>You can tell who has HIV by looking.</h3>
+                  <span class="home-fact-label">fact</span>
+                  <p>A test is the only way to know.</p>
+                </article>
+                <article class="home-myth-card">
+                  <span class="home-myth-label">myth</span>
+                  <h3>HIV spreads through hugs or sharing food.</h3>
+                  <span class="home-fact-label">fact</span>
+                  <p>HIV isn't spread through everyday contact.</p>
+                </article>
+                <article class="home-myth-card">
+                  <span class="home-myth-label">myth</span>
+                  <h3>An HIV diagnosis means your life is over.</h3>
+                  <span class="home-fact-label">fact</span>
+                  <p>With treatment, people with HIV can live long, healthy lives.</p>
+                </article>
+              </div>
+              <a class="btn home-myths-link" href="learn.html">
+                Explore more in Learn
+              </a>
+            </div>
+          </section>
+          <section
+            class="home-featured-section"
+            aria-labelledby="home-featured-title"
+          >
+            <div class="home-featured-content">
+              <h2 class="disp" id="home-featured-title">featured articles.</h2>
+              <p class="home-featured-intro">
+                Keep learning with these community essentials.
+              </p>
+              <div class="grid staggered home-featured-grid">
+                <a class="card c-pink" href="article.html#a-hiv">
+                  <span class="num">01</span>
+                  <h3>understanding HIV</h3>
+                  <p>
+                    How HIV spreads, how it doesn't, and what treatment does.
+                  </p>
+                  <span class="go">Read article</span>
+                </a>
+                <a class="card c-coral" href="article.html#a-protect">
+                  <span class="num">02</span>
+                  <h3>protection and prevention</h3>
+                  <p>Condoms, PrEP, PEP and regular testing.</p>
+                  <span class="go">Read article</span>
+                </a>
+                <a class="card c-cream" href="article.html#a-test">
+                  <span class="num">03</span>
+                  <h3>testing and support</h3>
+                  <p>
+                    How testing works, what treatment means, where to find help.
+                  </p>
+                  <span class="go">Read article</span>
+                </a>
+              </div>
+            </div>
+          </section>
+          <section
+            class="home-partners-section"
+            aria-labelledby="home-partners-title"
+          >
+            <div class="panel home-partners">
+              <h2 class="disp" id="home-partners-title">
+                backed by trusted partners.
+              </h2>
+              <p class="note">
+                Placeholders until partnerships are confirmed.
+              </p>
+              <div class="home-partner-list">
+                <span class="ph">[Partner name]</span>
+                <span class="ph">[Partner name]</span>
+                <span class="ph">[Partner name]</span>
+                <span class="ph">[Partner name]</span>
+              </div>
+            </div>
+            <div class="home-partner-actions">
+              <a class="btn coral" href="membership.html">
+                Join Our Community
+              </a>
+              <a class="btn" href="contact.html">Contact Us</a>
+            </div>
+          </section>
         </section>
       </main>
     </div>

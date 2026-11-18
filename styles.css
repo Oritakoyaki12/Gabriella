@@ -432,9 +432,13 @@ h1 .co {
     animation: none;
   }
 
-  body[data-page="home"] .grid.staggered .card {
+  body[data-page="home"] .home-pathways-grid .card {
     animation: none !important;
     transition: none !important;
+  }
+
+  body[data-page="home"] .home-explore.is-visible {
+    animation: none !important;
   }
 
   ::view-transition-group(*),
@@ -503,7 +507,7 @@ h1 .co {
   align-self: flex-start;
 }
 
-body[data-page="home"] .grid.staggered .card {
+body[data-page="home"] .home-pathways-grid .card {
   min-height: 300px;
   padding: 32px;
   animation: home-card-enter 600ms cubic-bezier(.2, .75, .25, 1) both;
@@ -512,28 +516,249 @@ body[data-page="home"] .grid.staggered .card {
     box-shadow 180ms ease;
 }
 
-body[data-page="home"] .grid.staggered .card:nth-child(2) {
+body[data-page="home"] .home-pathways-grid .card:nth-child(2) {
   animation-delay: 100ms;
 }
 
-body[data-page="home"] .grid.staggered .card:nth-child(3) {
+body[data-page="home"] .home-pathways-grid .card:nth-child(3) {
   animation-delay: 200ms;
 }
 
-body[data-page="home"] .grid.staggered .card:hover,
-body[data-page="home"] .grid.staggered .card:focus-visible {
+body[data-page="home"] .home-pathways-grid .card:hover,
+body[data-page="home"] .home-pathways-grid .card:focus-visible {
   transform: translateY(-6px);
   box-shadow:
     0 18px 36px rgba(8, 11, 53, .24),
     inset 0 1px 0 rgba(255, 255, 255, .65);
 }
 
-body[data-page="home"] .grid.staggered .card h3 {
+body[data-page="home"] .home-pathways-grid .card h3 {
   font-size: clamp(30px, 2.5vw, 36px);
 }
 
-body[data-page="home"] .grid.staggered .card p {
+body[data-page="home"] .home-pathways-grid .card p {
   font-size: 16px;
+}
+
+.home-explore-section {
+  display: grid;
+  align-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin-left: calc(50% - 50vw);
+  padding: clamp(108px, 12vh, 150px) clamp(24px, 8vw, 120px)
+    clamp(64px, 10vh, 120px);
+  background: var(--cream);
+  color: var(--navy);
+}
+
+.home-explore {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  min-width: 0;
+}
+
+.home-explore h2 {
+  font-size: clamp(30px, 3vw, 40px);
+  text-align: center;
+}
+
+body[data-page="home"] .home-explore.is-visible {
+  animation: home-explore-zoom-in 1400ms cubic-bezier(.2, .75, .25, 1) both;
+}
+
+body[data-page="home"] .home-pathways-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  align-items: stretch;
+  max-width: 1080px;
+  margin-top: 18px;
+}
+
+.home-myths-section {
+  display: grid;
+  align-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin-left: calc(50% - 50vw);
+  padding: clamp(108px, 12vh, 150px) clamp(24px, 8vw, 120px)
+    clamp(64px, 10vh, 120px);
+  background: var(--coral);
+  color: var(--navy);
+}
+
+.home-myths-content {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  min-width: 0;
+  text-align: center;
+}
+
+.home-myths-content h2 {
+  font-size: clamp(44px, 6vw, 72px);
+}
+
+.home-myths-intro {
+  margin: 16px 0 0;
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+.home-myths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 18px;
+  margin: clamp(24px, 4vw, 40px) 0 30px;
+  text-align: left;
+}
+
+.home-myth-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  padding: clamp(22px, 3vw, 34px);
+  border-radius: 28px;
+  background: var(--cream);
+  color: var(--navy);
+}
+
+.home-myth-card:nth-child(2) {
+  background: var(--pink);
+}
+
+.home-myth-card:nth-child(3) {
+  background: var(--peri);
+}
+
+.home-myth-label,
+.home-fact-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.home-myth-label {
+  color: var(--red);
+}
+
+.home-myth-card h3 {
+  margin: 10px 0 24px;
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.12;
+}
+
+.home-fact-label {
+  margin-top: auto;
+}
+
+.home-myth-card p {
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.home-myths-link {
+  background: var(--navy);
+  color: var(--cream);
+}
+
+.home-featured-section {
+  display: grid;
+  align-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin-left: calc(50% - 50vw);
+  padding: clamp(108px, 12vh, 150px) clamp(24px, 8vw, 120px)
+    clamp(64px, 10vh, 120px);
+  background: var(--peri);
+  color: var(--navy);
+}
+
+.home-featured-content {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  min-width: 0;
+  text-align: center;
+}
+
+.home-featured-content h2 {
+  font-size: clamp(44px, 6vw, 72px);
+}
+
+.home-featured-intro {
+  margin: 16px 0 0;
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+.home-featured-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  max-width: 1080px;
+  margin: clamp(24px, 4vw, 40px) auto 0;
+  text-align: left;
+}
+
+.home-featured-grid .card {
+  min-height: 300px;
+  padding: 32px;
+}
+
+.home-partners-section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 24px;
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin-left: calc(50% - 50vw);
+  padding: clamp(108px, 12vh, 150px) clamp(24px, 8vw, 120px)
+    clamp(64px, 10vh, 120px);
+  background: var(--pink);
+  color: var(--navy);
+}
+
+.home-partners {
+  width: 100%;
+  max-width: 980px;
+  padding: clamp(28px, 5vw, 64px);
+  background: rgba(8, 11, 53, .05);
+  border-color: rgba(8, 11, 53, .2);
+  text-align: center;
+}
+
+.home-partners h2 {
+  font-size: clamp(40px, 6vw, 72px);
+}
+
+.home-partners .note {
+  margin: 16px 0 28px;
+}
+
+.home-partner-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.home-partner-list .ph {
+  margin: 0;
+  border-color: currentColor;
+  padding: 10px 20px;
+}
+
+.home-partner-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 28px;
 }
 
 @keyframes home-card-enter {
@@ -545,6 +770,18 @@ body[data-page="home"] .grid.staggered .card p {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes home-explore-zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -899,7 +1136,6 @@ footer a {
   .grid.equal-columns {
     grid-template-columns: 1fr;
   }
-
 
   .mf { 
     grid-template-columns: 1fr;
