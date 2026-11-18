@@ -83,6 +83,30 @@ header {
   margin-top: 10px;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: 160ms ease-out both page-fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 200ms ease-in both page-fade-in;
+}
+
+@keyframes page-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -323,6 +347,12 @@ h1 .co {
     animation: none;
   }
 
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0s !important;
+  }
+
   html {
     scroll-behavior: auto;
   }
@@ -375,15 +405,15 @@ h1 .co {
   background: var(--cream);
 }
 
-.grid .card:nth-child(2) {
+.grid.staggered .card:nth-child(2) {
   margin-top: 22px;
 }
 
-.grid .card:nth-child(3) {
+.grid.staggered .card:nth-child(3) {
   margin-top: 6px;
 }
 
-.grid .card:nth-child(4) {
+.grid.staggered .card:nth-child(4) {
   margin-top: 30px;
 }
 
@@ -637,7 +667,7 @@ footer a {
     grid-template-columns: 1fr;
   }
 
-  .grid .card {
+  .grid.staggered .card {
     margin-top: 0 !important;
   }
 

@@ -24,7 +24,9 @@ const Footer = () => `
 `;
 
 document.querySelector("#site-header").innerHTML = Header();
-document.querySelector("#site-footer").innerHTML = Footer();
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("#site-footer").innerHTML = Footer();
+});
 document.body.insertAdjacentHTML(
   "beforeend",
   '<button class="qx" id="qx" aria-label="Quick exit">Quick exit ✕</button>',
