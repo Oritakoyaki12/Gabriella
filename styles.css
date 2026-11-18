@@ -44,6 +44,12 @@ body::before {
     radial-gradient(500px 400px at 40% 100%, rgba(209, 76, 116, .35), transparent 70%);
 }
 
+body[data-page="home"]::before {
+  inset: -180px 0;
+  transform: translate3d(0, var(--home-parallax-y, 0px), 0);
+  will-change: transform;
+}
+
 body::after {
   content: "";
   position: fixed;
@@ -549,8 +555,8 @@ body[data-page="home"] .home-pathways-grid .card p {
   margin-left: calc(50% - 50vw);
   padding: clamp(108px, 12vh, 150px) clamp(24px, 8vw, 120px)
     clamp(64px, 10vh, 120px);
-  background: var(--cream);
-  color: var(--navy);
+  background: transparent;
+  color: var(--cream);
 }
 
 .home-explore {
@@ -585,8 +591,8 @@ body[data-page="home"] .home-pathways-grid {
   margin-left: calc(50% - 50vw);
   padding: clamp(108px, 12vh, 150px) clamp(24px, 8vw, 120px)
     clamp(64px, 10vh, 120px);
-  background: var(--coral);
-  color: var(--navy);
+  background: transparent;
+  color: var(--cream);
 }
 
 .home-myths-content {
@@ -674,8 +680,8 @@ body[data-page="home"] .home-pathways-grid {
   margin-left: calc(50% - 50vw);
   padding: clamp(108px, 12vh, 150px) clamp(24px, 8vw, 120px)
     clamp(64px, 10vh, 120px);
-  background: var(--peri);
-  color: var(--navy);
+  background: transparent;
+  color: var(--cream);
 }
 
 .home-featured-content {
@@ -718,8 +724,8 @@ body[data-page="home"] .home-pathways-grid {
   margin-left: calc(50% - 50vw);
   padding: clamp(108px, 12vh, 150px) clamp(24px, 8vw, 120px)
     clamp(64px, 10vh, 120px);
-  background: var(--pink);
-  color: var(--navy);
+  background: transparent;
+  color: var(--cream);
 }
 
 .home-partners {
@@ -1403,8 +1409,8 @@ body {
   margin-left: calc(50% - 50vw);
   padding: clamp(64px, 10vh, 120px) clamp(24px, 14vw, 220px);
   padding-top: clamp(108px, 12vh, 150px);
-  background: var(--cream);
-  color: var(--navy);
+  background: transparent;
+  color: var(--cream);
 }
 
 .why-section .ticker {
@@ -1493,6 +1499,14 @@ body {
 
 :root[data-theme="light"] .why-section .why-stat-card {
   box-shadow: none;
+}
+
+:root[data-theme="light"] body[data-page="home"] .home-explore-section,
+:root[data-theme="light"] body[data-page="home"] .home-myths-section,
+:root[data-theme="light"] body[data-page="home"] .home-featured-section,
+:root[data-theme="light"] body[data-page="home"] .home-partners-section,
+:root[data-theme="light"] body[data-page="home"] .why-section {
+  color: var(--navy);
 }
 
 :root[data-theme="light"] .btn:focus-visible,

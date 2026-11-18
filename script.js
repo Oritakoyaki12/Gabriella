@@ -321,6 +321,38 @@ function initHomeExploreAnimation() {
   }
 }
 
+function initHomeBackgroundParallax() {
+  if (
+    document.body.dataset.page !== "home" ||
+    matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    return;
+  }
+
+  let scheduled = false;
+  const updatePosition = () => {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollProgress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+    const offset = -scrollProgress * 180;
+    document.documentElement.style.setProperty(
+      "--home-parallax-y",
+      `${offset}px`,
+    );
+    scheduled = false;
+  };
+
+  addEventListener(
+    "scroll",
+    () => {
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(updatePosition);
+    },
+    { passive: true },
+  );
+  updatePosition();
+}
+
 let translated = false;
 try {
   translated = localStorage.getItem("glang") === "fil";
@@ -388,3 +420,4 @@ addEventListener("hashchange", route);
 route();
 initWhyStat();
 initHomeExploreAnimation();
+initHomeBackgroundParallax();
