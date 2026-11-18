@@ -243,6 +243,61 @@ function initForms() {
   });
 }
 
+function initWhyStat() {
+  const card = $(".why-stat-card");
+  const counter = $(".why-stat-card [data-count]");
+  if (!card || !counter) return;
+
+  const target = Number(counter.dataset.count);
+  if (!Number.isSafeInteger(target) || target < 0) {
+    throw new Error("The why-it-matters counter needs a non-negative integer.");
+  }
+
+  const finalValue = new Intl.NumberFormat().format(target);
+  counter.textContent = finalValue;
+
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    card.classList.add("is-visible");
+    return;
+  }
+
+  counter.textContent = "0";
+  card.classList.add("is-pending");
+
+  const animate = () => {
+    card.classList.remove("is-pending");
+    card.classList.add("is-visible");
+
+    const startTime = performance.now();
+    const duration = 1400;
+    const updateCount = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const easedProgress = 1 - (1 - progress) ** 3;
+      counter.textContent = new Intl.NumberFormat().format(
+        Math.floor(target * easedProgress),
+      );
+      if (progress < 1) requestAnimationFrame(updateCount);
+    };
+
+    requestAnimationFrame(updateCount);
+  };
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          animate();
+        }
+      },
+      { threshold: 0.25 },
+    );
+    observer.observe(card);
+  } else {
+    animate();
+  }
+}
+
 let translated = false;
 try {
   translated = localStorage.getItem("glang") === "fil";
@@ -308,3 +363,4 @@ themeButton.onclick = () => {
 
 addEventListener("hashchange", route);
 route();
+initWhyStat();
