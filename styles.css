@@ -71,9 +71,9 @@ a {
 .wrap {
   position: relative;
   z-index: 1;
-  max-width: 1100px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 clamp(16px, 2vw, 28px);
 }
 
 header {
@@ -475,6 +475,11 @@ hr {
   align-items: start;
 }
 
+.two.equal-columns,
+.grid.equal-columns {
+  grid-template-columns: 1fr 1fr;
+}
+
 .note {
   font-size: 13px;
   opacity: .75;
@@ -619,6 +624,11 @@ footer a {
     grid-template-columns: 1fr;
   }
 
+  .two.equal-columns,
+  .grid.equal-columns {
+    grid-template-columns: 1fr;
+  }
+
   .glass {
     margin: -50px 8px 0;
   }
@@ -633,6 +643,81 @@ footer a {
 
   .paper {
     padding: 22px;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-areas:
+      "brand theme language"
+      "links links cta";
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 24px;
+  }
+
+  .logo {
+    grid-area: brand;
+    margin-right: 0;
+    font-size: clamp(20px, 3vw, 24px);
+  }
+
+  .links {
+    grid-area: links;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .links a {
+    padding: 6px 10px;
+  }
+
+  .btn.coral {
+    grid-area: cta;
+    justify-self: end;
+    white-space: nowrap;
+    padding: 10px 16px;
+  }
+
+  #theme {
+    grid-area: theme;
+    white-space: nowrap;
+    padding: 6px 10px;
+  }
+
+  #lang {
+    grid-area: language;
+    white-space: nowrap;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav {
+    grid-template-areas:
+      "brand theme language"
+      "links links links"
+      "cta cta cta";
+    padding: 10px;
+  }
+
+  .links {
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+
+  .btn.coral {
+    justify-self: stretch;
+    text-align: center;
+  }
+
+  #theme,
+  #lang {
+    font-size: 12px;
+    padding: 5px 7px;
   }
 }
 
