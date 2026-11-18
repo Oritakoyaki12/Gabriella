@@ -142,6 +142,44 @@ header {
   }
 }
 
+@keyframes home-card-zoom-in {
+  from {
+    opacity: 0;
+    scale: .88;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes home-heading-swing {
+  0% {
+    rotate: 0deg;
+  }
+
+  25% {
+    rotate: -7deg;
+  }
+
+  50% {
+    rotate: 5deg;
+  }
+
+  72% {
+    rotate: -3deg;
+  }
+
+  88% {
+    rotate: 2deg;
+  }
+
+  100% {
+    rotate: 0deg;
+  }
+}
+
 @keyframes page-fade-in {
   from {
     opacity: 0;
@@ -447,6 +485,24 @@ h1 .co {
     animation: none !important;
   }
 
+  .home-myth-card,
+  .home-featured-grid .card {
+    transition: none;
+  }
+
+  .home-myth-card:hover,
+  .home-featured-grid .card:hover,
+  .home-featured-grid .card:focus-visible {
+    transform: none;
+  }
+
+  .home-myths-section.is-visible .home-myths-content h2,
+  .home-featured-section.is-visible .home-featured-content h2,
+  .home-myths-section.is-visible .home-myth-card,
+  .home-featured-section.is-visible .home-featured-grid .card {
+    animation: none;
+  }
+
   ::view-transition-group(*),
   ::view-transition-old(*),
   ::view-transition-new(*) {
@@ -628,6 +684,13 @@ body[data-page="home"] .home-pathways-grid {
   border-radius: 28px;
   background: var(--cream);
   color: var(--navy);
+  box-shadow: 0 12px 28px rgba(8, 11, 53, .12);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.home-myth-card:hover {
+  transform: translateY(-7px) rotate(-1deg);
+  box-shadow: 0 20px 36px rgba(8, 11, 53, .22);
 }
 
 .home-myth-card:nth-child(2) {
@@ -636,6 +699,27 @@ body[data-page="home"] .home-pathways-grid {
 
 .home-myth-card:nth-child(3) {
   background: var(--peri);
+}
+
+.home-myths-section.is-visible .home-myths-content h2,
+.home-featured-section.is-visible .home-featured-content h2 {
+  animation: home-heading-swing 750ms cubic-bezier(.2, .75, .25, 1) both;
+  transform-origin: center bottom;
+}
+
+.home-myths-section.is-visible .home-myth-card,
+.home-featured-section.is-visible .home-featured-grid .card {
+  animation: home-card-zoom-in 650ms cubic-bezier(.2, .75, .25, 1) both;
+}
+
+.home-myths-section.is-visible .home-myth-card:nth-child(2),
+.home-featured-section.is-visible .home-featured-grid .card:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.home-myths-section.is-visible .home-myth-card:nth-child(3),
+.home-featured-section.is-visible .home-featured-grid .card:nth-child(3) {
+  animation-delay: 200ms;
 }
 
 .home-myth-label,
@@ -711,6 +795,14 @@ body[data-page="home"] .home-pathways-grid {
 .home-featured-grid .card {
   min-height: 300px;
   padding: 32px;
+  box-shadow: 0 12px 30px rgba(8, 11, 53, .14);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.home-featured-grid .card:hover,
+.home-featured-grid .card:focus-visible {
+  transform: translateY(-7px) scale(1.02);
+  box-shadow: 0 20px 38px rgba(8, 11, 53, .24);
 }
 
 .home-partners-section {
