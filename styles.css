@@ -950,6 +950,21 @@ hr {
   grid-template-columns: 1fr 1fr;
 }
 
+.form-page-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 24px;
+}
+
+.form-page-copy .panel {
+  margin-top: 24px;
+}
+
+.form-page-layout > .card {
+  margin-top: 17px;
+}
+
 .note {
   font-size: 13px;
   opacity: .75;
@@ -1128,6 +1143,7 @@ footer a {
 
   .hero,
   .two,
+  .form-page-layout,
   .sites {
     grid-template-columns: 1fr;
   }
@@ -1135,6 +1151,10 @@ footer a {
   .two.equal-columns,
   .grid.equal-columns {
     grid-template-columns: 1fr;
+  }
+
+  .form-page-layout > .card {
+    margin-top: 0;
   }
 
   .mf { 
