@@ -16,4 +16,5 @@ Then open the URL printed by the server.
 - `components.js` renders the reusable header and footer on each page.
 - `pages/` contains standalone HTML pages.
 - `script.js` handles articles, testing, forms, language, and theme behavior.
+- `theme.js` applies the saved theme before stylesheets load to prevent a flash.
 - `styles.css` contains the shared styles.
