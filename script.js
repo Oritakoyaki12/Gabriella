@@ -254,9 +254,14 @@ function applyLanguage() {
     element.textContent = translated ? element.dataset.fil : element.dataset.en;
   });
   document.documentElement.lang = translated ? "fil" : "en";
+  $("#lang").textContent = translated ? "FIL" : "ENG";
   $("#lang").setAttribute("aria-pressed", String(translated));
   $("#lang").setAttribute(
     "aria-label",
+    translated ? "Switch to English" : "Switch to Filipino",
+  );
+  $("#lang").setAttribute(
+    "title",
     translated ? "Switch to English" : "Switch to Filipino",
   );
 }
@@ -281,10 +286,12 @@ const themeButton = $("#theme");
 
 function setTheme(theme) {
   document.documentElement.dataset.theme = theme;
-  themeButton.textContent = theme === "light" ? "☾ Dark" : "☀ Light";
+  themeButton.textContent = theme === "light" ? "☾" : "☀";
+  const nextTheme = theme === "light" ? "dark" : "light";
+  themeButton.title = `Switch to ${nextTheme} mode`;
   themeButton.setAttribute(
     "aria-label",
-    `Switch to ${theme === "light" ? "dark" : "light"} mode`,
+    `Switch to ${nextTheme} mode`,
   );
   try {
     localStorage.setItem("gtheme", theme);

@@ -9,8 +9,8 @@ const Header = () => `
       <a href="contact.html" data-r="contact">Contact</a>
     </div>
     <a class="btn coral" href="test.html" data-fil="Magpa-test">Get Tested</a>
-    <button class="lang" id="theme" aria-label="Switch to light mode">☀ Light</button>
-    <button class="lang" id="lang" aria-label="Switch language">EN | FIL</button>
+    <button class="lang icon-button" id="theme" type="button" aria-label="Switch to light mode" title="Switch to light mode">☀</button>
+    <button class="lang icon-button language-button" id="lang" type="button" aria-label="Switch language" title="Switch language" aria-pressed="false">ENG</button>
   </nav>
 `;
 
