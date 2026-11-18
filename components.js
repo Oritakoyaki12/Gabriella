@@ -10,7 +10,10 @@ const Header = () => `
     </div>
     <a class="btn coral" href="test.html" data-fil="Magpa-test">Get Tested</a>
     <button class="lang icon-button" id="theme" type="button" aria-label="Switch to light mode" title="Switch to light mode">☀</button>
-    <button class="lang icon-button language-button" id="lang" type="button" aria-label="Switch language" title="Switch language" aria-pressed="false">ENG</button>
+    <button class="lang language-button" id="lang" type="button" aria-label="Switch language" title="Switch language" aria-pressed="false">
+      <span class="language-option" data-language="en">EN</span>
+      <span class="language-option" data-language="fil">FIL</span>
+    </button>
   </nav>
 `;
 

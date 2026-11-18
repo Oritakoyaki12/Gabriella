@@ -254,8 +254,12 @@ function applyLanguage() {
     element.textContent = translated ? element.dataset.fil : element.dataset.en;
   });
   document.documentElement.lang = translated ? "fil" : "en";
-  $("#lang").textContent = translated ? "FIL" : "ENG";
   $("#lang").setAttribute("aria-pressed", String(translated));
+  $$(".language-option", $("#lang")).forEach((option) => {
+    const active =
+      option.dataset.language === (translated ? "fil" : "en");
+    option.classList.toggle("active", active);
+  });
   $("#lang").setAttribute(
     "aria-label",
     translated ? "Switch to English" : "Switch to Filipino",
