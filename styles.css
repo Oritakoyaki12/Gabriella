@@ -114,9 +114,15 @@ header {
   flex-wrap: wrap;
   padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(20, 22, 80, .82);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 243, 234, .18);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, .13), rgba(255, 255, 255, .04) 52%, rgba(139, 135, 230, .1)),
+    rgba(20, 22, 80, .64);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid rgba(255, 243, 234, .26);
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, .22),
+    inset 0 1px 0 rgba(255, 255, 255, .2);
 }
 
 .logo {
@@ -773,8 +779,13 @@ body {
 }
 
 :root[data-theme="light"] .nav {
-  background: rgba(255, 255, 255, .88);
-  border-color: rgba(8, 11, 53, .18);
+  background:
+    linear-gradient(135deg, rgba(255, 198, 221, .42), rgba(255, 243, 234, .2) 52%, rgba(139, 135, 230, .24)),
+    rgba(255, 243, 234, .38);
+  border-color: rgba(8, 11, 53, .2);
+  box-shadow:
+    0 12px 36px rgba(8, 11, 53, .18),
+    inset 0 1px 0 rgba(255, 255, 255, .65);
 }
 
 :root[data-theme="light"] .logo b {
