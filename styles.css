@@ -1,5 +1,5 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   --navy: #080B35;
   --rose: #D14C74;
   --red: #C02727;
@@ -1250,9 +1250,9 @@ footer a {
 @media (max-width: 900px) {
   .nav {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
-      "brand theme language"
+      "brand language"
       "links links links";
     gap: 8px;
     padding: 10px 12px;
@@ -1275,11 +1275,6 @@ footer a {
     padding: 6px 10px;
   }
 
-  #theme {
-    grid-area: theme;
-    white-space: nowrap;
-  }
-
   #lang {
     grid-area: language;
     white-space: nowrap;
@@ -1289,7 +1284,7 @@ footer a {
 @media (max-width: 600px) {
   .nav {
     grid-template-areas:
-      "brand theme language"
+      "brand language"
       "links links links";
     padding: 10px;
   }
@@ -1300,16 +1295,11 @@ footer a {
     overflow: visible;
   }
 
-  #theme,
   #lang {
     font-size: 20px;
     padding: 0;
   }
 
-  #theme {
-    width: 44px;
-    min-width: 44px;
-  }
 
   #lang {
     width: auto;
@@ -1323,25 +1313,25 @@ body {
   transition: background .3s, color .3s;
 }
 
-:root[data-theme="light"] body {
+body {
   color-scheme: light;
   background: #FFF8F5;
   color: var(--navy);
 }
 
-:root[data-theme="light"] body::before {
+body::before {
   background:
     radial-gradient(500px 400px at 8% 15%, rgba(255, 198, 221, .8), transparent 70%),
     radial-gradient(600px 500px at 95% 10%, rgba(139, 135, 230, .3), transparent 70%),
     radial-gradient(500px 400px at 40% 100%, rgba(244, 223, 223, .9), transparent 70%);
 }
 
-:root[data-theme="light"] body::after {
+body::after {
   mix-blend-mode: multiply;
   opacity: .07;
 }
 
-:root[data-theme="light"] .nav {
+.nav {
   background: rgba(255, 255, 255, .96);
   border-color: rgba(8, 11, 53, .2);
   box-shadow:
@@ -1349,51 +1339,51 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, .65);
 }
 
-:root[data-theme="light"] h1 .pill {
+h1 .pill {
   background: var(--navy);
   color: var(--cream);
 }
 
-:root[data-theme="light"] .logo b {
+.logo b {
   color: var(--rose);
 }
 
-:root[data-theme="light"] .lang {
+.lang {
   color: var(--navy);
   border-color: rgba(8, 11, 53, .5);
 }
 
-:root[data-theme="light"] .dot {
+.dot {
   color: var(--rose);
 }
 
-:root[data-theme="light"] .btn.ghost {
+.btn.ghost {
   color: var(--navy);
   border-color: var(--navy);
 }
 
-:root[data-theme="light"] .chip {
+.chip {
   color: var(--navy);
   border-color: var(--navy);
 }
 
-:root[data-theme="light"] .chip[aria-pressed=true] {
+.chip[aria-pressed=true] {
   color: var(--navy);
   border-color: var(--pink);
 }
 
-:root[data-theme="light"] .panel {
+.panel {
   background: rgba(8, 11, 53, .04);
   border-color: rgba(8, 11, 53, .2);
 }
 
 
-:root[data-theme="light"] hr,
-:root[data-theme="light"] footer {
+hr,
+footer {
   border-color: rgba(8, 11, 53, .3);
 }
 
-:root[data-theme="light"] .ph {
+.ph {
   border-color: var(--navy);
 }
 
@@ -1488,29 +1478,29 @@ body {
   }
 }
 
-:root[data-theme="light"] .paper {
+.paper {
   background: #fff;
   box-shadow: inset 0 0 0 2px var(--navy);
 }
 
-:root[data-theme="light"] .card.c-cream {
+.card.c-cream {
   box-shadow: inset 0 0 0 1.5px rgba(8, 11, 53, .2);
 }
 
-:root[data-theme="light"] .why-section .why-stat-card {
+.why-section .why-stat-card {
   box-shadow: none;
 }
 
-:root[data-theme="light"] body[data-page="home"] .home-explore-section,
-:root[data-theme="light"] body[data-page="home"] .home-myths-section,
-:root[data-theme="light"] body[data-page="home"] .home-featured-section,
-:root[data-theme="light"] body[data-page="home"] .home-partners-section,
-:root[data-theme="light"] body[data-page="home"] .why-section {
+body[data-page="home"] .home-explore-section,
+body[data-page="home"] .home-myths-section,
+body[data-page="home"] .home-featured-section,
+body[data-page="home"] .home-partners-section,
+body[data-page="home"] .why-section {
   color: var(--navy);
 }
 
-:root[data-theme="light"] .btn:focus-visible,
-:root[data-theme="light"] .lang:focus-visible,
-:root[data-theme="light"] a:focus-visible {
+.btn:focus-visible,
+.lang:focus-visible,
+a:focus-visible {
   outline-color: var(--navy);
 }

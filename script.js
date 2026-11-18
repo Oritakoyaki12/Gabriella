@@ -388,34 +388,6 @@ $("#lang").onclick = () => {
   applyLanguage();
 };
 
-const themeButton = $("#theme");
-
-function setTheme(theme) {
-  document.documentElement.dataset.theme = theme;
-  themeButton.textContent = theme === "light" ? "☾" : "☀";
-  const nextTheme = theme === "light" ? "dark" : "light";
-  themeButton.title = `Switch to ${nextTheme} mode`;
-  themeButton.setAttribute(
-    "aria-label",
-    `Switch to ${nextTheme} mode`,
-  );
-  try {
-    localStorage.setItem("gtheme", theme);
-  } catch (error) {}
-}
-
-let savedTheme = "dark";
-try {
-  savedTheme = localStorage.getItem("gtheme") || "dark";
-} catch (error) {}
-setTheme(savedTheme);
-
-themeButton.onclick = () => {
-  setTheme(
-    document.documentElement.dataset.theme === "light" ? "dark" : "light",
-  );
-};
-
 addEventListener("hashchange", route);
 route();
 initWhyStat();

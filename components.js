@@ -8,7 +8,6 @@ const Header = () => `
       <a href="membership.html" data-r="membership">Membership</a>
       <a href="contact.html" data-r="contact">Contact</a>
     </div>
-    <button class="lang icon-button" id="theme" type="button" aria-label="Switch to light mode" title="Switch to light mode">☀</button>
     <button class="lang language-button" id="lang" type="button" aria-label="Switch language" title="Switch language" aria-pressed="false">
       <span class="language-option" data-language="en">EN</span>
       <span class="language-option" data-language="fil">FIL</span>

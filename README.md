@@ -15,6 +15,5 @@ Then open the URL printed by the server.
 - `index.html` redirects to the home page.
 - `components.js` renders the reusable header and footer on each page.
 - `pages/` contains standalone HTML pages.
-- `script.js` handles articles, testing, forms, language, and theme behavior.
-- `theme.js` applies the saved theme before stylesheets load to prevent a flash.
+- `script.js` handles articles, testing, forms, and language behavior.
 - `styles.css` contains the shared styles.
