@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Membership — Gabriella</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-page="membership">
+    <div class="wrap">
+      <header id="site-header"></header>
+      <main>
+        <section class="page show" data-p="membership">
+          <span class="tag p">join us</span>
+          <h1>
+            be part of<br /><span class="pill">the change</span
+            ><span class="dot">.</span>
+          </h1>
+          <p class="lead">
+            Membership is free. It’s not an account, just a way to get updates
+            and join what we do.
+          </p>
+          <div class="two" style="grid-template-columns: 1fr 1fr">
+            <div class="panel">
+              <h3 class="disp" style="font-size: 30px">ways to join in</h3>
+              <p>
+                • Volunteer<br />• Join awareness campaigns<br />• Attend
+                community events<br />• Support advocacy initiatives
+              </p>
+              <p class="note">
+                Benefits: educational updates, event news, volunteer openings.
+              </p>
+            </div>
+            <div class="card c-pink">
+              <h3>join our community</h3>
+              <form data-ok="okm">
+                <label for="m1">Name or nickname</label>
+                <input id="m1" required />
+                <label for="m2">Email</label>
+                <input id="m2" type="email" required />
+                <label>I’m interested in</label>
+                <label class="chk"
+                  ><input type="checkbox" /> Volunteering</label
+                >
+                <label class="chk"><input type="checkbox" /> Campaigns</label>
+                <label class="chk"><input type="checkbox" /> Events</label>
+                <p class="note">
+                  We only use this to send updates. Please don’t share health
+                  details. You can unsubscribe anytime.
+                </p>
+                <button class="btn" type="submit">Join our community</button>
+              </form>
+              <div class="ok" id="okm" role="status">
+                Salamat! You’re in. Watch your inbox for updates. (Prototype:
+                nothing was sent.)
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer id="site-footer"></footer>
+    <script src="../components.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

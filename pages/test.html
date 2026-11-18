@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Find a testing site — Gabriella</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-page="test">
+    <div class="wrap">
+      <header id="site-header"></header>
+      <main>
+        <section class="page show" data-p="test">
+          <span class="tag">get tested</span>
+          <h1>
+            find a <span class="pill">testing</span> site<span class="co"
+              >.</span
+            >
+          </h1>
+          <div class="search" style="margin-top: 28px">
+            <input
+              id="q"
+              placeholder="Search by city or barangay"
+              aria-label="Search by city or barangay"
+            />
+            <button class="btn" id="qb">Search</button>
+          </div>
+          <div class="chips" id="chips">
+            <button class="chip" aria-pressed="false" data-t="free">
+              free
+            </button>
+            <button class="chip" aria-pressed="false" data-t="walk-in">
+              walk-in
+            </button>
+            <button class="chip" aria-pressed="false" data-t="youth-friendly">
+              youth-friendly
+            </button>
+            <button class="chip" aria-pressed="false" data-t="online booking">
+              online booking
+            </button>
+          </div>
+          <p class="note">
+            Sample listings only. Real entries must be verified, with a “last
+            verified” date, before publishing. Don’t assume a site offers a
+            service until confirmed.
+          </p>
+          <div class="sites">
+            <div id="sl"></div>
+            <div class="map" aria-label="Map placeholder">
+              <svg viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice">
+                <g stroke="#EDE9FA" stroke-width="14" fill="none">
+                  <path
+                    d="M0 70H400M0 180H400M0 270H400M90 0V340M230 0V340M330 0V340"
+                  />
+                </g>
+                <path d="M0 120H400" stroke="#FFC6DD" stroke-width="8" />
+                <g fill="#FF5A3C" stroke="#080B35" stroke-width="5">
+                  <circle cx="110" cy="85" r="14" />
+                  <circle cx="250" cy="170" r="14" />
+                  <circle cx="170" cy="250" r="14" />
+                </g>
+                <circle cx="340" cy="290" r="40" fill="#FFC6DD" opacity=".8" />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="grid"
+            style="margin-top: 26px; grid-template-columns: 1fr 1fr"
+          >
+            <div class="panel">
+              <h3 class="disp" style="font-size: 28px">what to expect</h3>
+              <p>
+                A short chat, a quick test and a talk about your result. Ask the
+                site about privacy and confidentiality before you go. Your
+                health information is yours. No one should pressure you.
+              </p>
+            </div>
+            <div class="card c-cream" style="margin-top: 0">
+              <h3 style="font-size: 28px">hotlines and online support</h3>
+              <p>
+                <span class="sample">placeholder</span><br /><b
+                  >[Hotline name]:</b
+                >
+                [number]<br /><b>[Online support]:</b> [website]
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer id="site-footer"></footer>
+    <script src="../components.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>
