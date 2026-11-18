@@ -19,7 +19,7 @@
     <div class="wrap">
       <header id="site-header"></header>
       <script src="../components.js"></script>
-      <main>
+      <main id="main-content" tabindex="-1">
         <section class="page show" data-p="contact">
           <span class="tag">say hi</span>
           <h1>
@@ -43,9 +43,9 @@
               <h3>send a message</h3>
               <form data-ok="okc">
                 <label for="c1">Full name</label>
-                <input id="c1" required />
+                <input id="c1" name="name" autocomplete="name" required />
                 <label for="c2">Email</label>
-                <input id="c2" type="email" required />
+                <input id="c2" name="email" type="email" autocomplete="email" required />
                 <label for="c3">Topic</label>
                 <select id="c3">
                   <option>General inquiry</option>

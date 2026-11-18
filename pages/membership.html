@@ -19,7 +19,7 @@
     <div class="wrap">
       <header id="site-header"></header>
       <script src="../components.js"></script>
-      <main>
+      <main id="main-content" tabindex="-1">
         <section class="page show" data-p="membership">
           <span class="tag p">join us</span>
           <h1>
@@ -45,15 +45,17 @@
               <h3>join our community</h3>
               <form data-ok="okm">
                 <label for="m1">Name or nickname</label>
-                <input id="m1" required />
+                <input id="m1" name="name" autocomplete="name" required />
                 <label for="m2">Email</label>
-                <input id="m2" type="email" required />
-                <label>I’m interested in</label>
-                <label class="chk"
-                  ><input type="checkbox" /> Volunteering</label
-                >
-                <label class="chk"><input type="checkbox" /> Campaigns</label>
-                <label class="chk"><input type="checkbox" /> Events</label>
+                <input id="m2" name="email" type="email" autocomplete="email" required />
+                <fieldset class="interest-set">
+                  <legend>I’m interested in</legend>
+                  <label class="chk"
+                    ><input type="checkbox" /> Volunteering</label
+                  >
+                  <label class="chk"><input type="checkbox" /> Campaigns</label>
+                  <label class="chk"><input type="checkbox" /> Events</label>
+                </fieldset>
                 <p class="note">
                   We only use this to send updates. Please don’t share health
                   details. You can unsubscribe anytime.

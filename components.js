@@ -23,11 +23,15 @@ const Footer = () => `
   </div>
 `;
 
+document.body.insertAdjacentHTML(
+  "afterbegin",
+  '<a class="skip-link" href="#main-content">Skip to main content</a>',
+);
 document.querySelector("#site-header").innerHTML = Header();
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#site-footer").innerHTML = Footer();
 });
 document.body.insertAdjacentHTML(
   "beforeend",
-  '<button class="qx" id="qx" aria-label="Quick exit">Quick exit ✕</button>',
+  '<button class="qx" id="qx" aria-label="Quick exit: leave this page" title="Leave this page immediately">Quick exit ✕</button>',
 );

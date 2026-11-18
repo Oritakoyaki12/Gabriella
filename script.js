@@ -120,14 +120,19 @@ function route() {
   const pageName = document.body.dataset.page;
   const articleKey = location.hash.slice(1).replace(/^a-/, "") || "hiv";
 
-  if (pageName === "article" && A[articleKey]) art(articleKey);
+  if (pageName === "article") {
+    art(A[articleKey] ? articleKey : "hiv");
+  }
   if (pageName === "test") initTestPage();
 
   $$(".links a").forEach((link) => {
-    link.classList.toggle(
-      "on",
-      link.dataset.r === (pageName === "article" ? "learn" : pageName),
-    );
+    const active = link.dataset.r === (pageName === "article" ? "learn" : pageName);
+    link.classList.toggle("on", active);
+    if (active) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
   });
 
   initForms();
@@ -239,6 +244,9 @@ function initForms() {
 }
 
 let translated = false;
+try {
+  translated = localStorage.getItem("glang") === "fil";
+} catch (error) {}
 
 function applyLanguage() {
   $$("[data-fil]").forEach((element) => {
@@ -246,10 +254,18 @@ function applyLanguage() {
     element.textContent = translated ? element.dataset.fil : element.dataset.en;
   });
   document.documentElement.lang = translated ? "fil" : "en";
+  $("#lang").setAttribute("aria-pressed", String(translated));
+  $("#lang").setAttribute(
+    "aria-label",
+    translated ? "Switch to English" : "Switch to Filipino",
+  );
 }
 
 $("#lang").onclick = () => {
   translated = !translated;
+  try {
+    localStorage.setItem("glang", translated ? "fil" : "en");
+  } catch (error) {}
   applyLanguage();
 };
 
