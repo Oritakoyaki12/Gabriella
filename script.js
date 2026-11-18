@@ -278,14 +278,6 @@ $("#lang").onclick = () => {
   applyLanguage();
 };
 
-$("#qx").onclick = () => {
-  try {
-    (window.top || window).location.replace("https://www.google.com/");
-  } catch (error) {
-    location.replace("https://www.google.com/");
-  }
-};
-
 const themeButton = $("#theme");
 
 function setTheme(theme) {

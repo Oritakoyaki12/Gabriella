@@ -8,7 +8,6 @@ const Header = () => `
       <a href="membership.html" data-r="membership">Membership</a>
       <a href="contact.html" data-r="contact">Contact</a>
     </div>
-    <a class="btn coral" href="test.html" data-fil="Magpa-test">Get Tested</a>
     <button class="lang icon-button" id="theme" type="button" aria-label="Switch to light mode" title="Switch to light mode">☀</button>
     <button class="lang language-button" id="lang" type="button" aria-label="Switch language" title="Switch language" aria-pressed="false">
       <span class="language-option" data-language="en">EN</span>
@@ -34,7 +33,3 @@ document.querySelector("#site-header").innerHTML = Header();
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#site-footer").innerHTML = Footer();
 });
-document.body.insertAdjacentHTML(
-  "beforeend",
-  '<button class="qx" id="qx" aria-label="Quick exit: leave this page" title="Leave this page immediately">Quick exit ✕</button>',
-);
