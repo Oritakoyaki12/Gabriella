@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <title>Gabriella — Break the stigma</title>
+    <title data-fil="Gabriella — Wakasan ang stigma">Gabriella — Break the stigma</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap"
@@ -29,7 +29,7 @@
                 ><br />
                 <span class="co" data-fil="may alam.">youth.</span>
               </h1>
-              <p class="hero-slogan">
+              <p class="hero-slogan" data-fil="Wakasan ang stigma. Ibahagi ang kaalaman. Maging bahagi ng pagbabago.">
                 Break the stigma. Share the knowledge. Be part of the change.
               </p>
               <p
@@ -43,8 +43,8 @@
                 <a class="btn" href="learn.html" data-fil="Matuto tayo"
                   >Explore resources</a
                 >
-                <a class="btn coral" href="test.html">Get Tested</a>
-                <a class="btn ghost" href="membership.html"
+                <a class="btn coral" href="test.html" data-fil="Magpasuri">Get Tested</a>
+                <a class="btn ghost" href="membership.html" data-fil="Sumali sa aming komunidad"
                   >Join our community</a
                 >
               </div>
@@ -91,6 +91,7 @@
                     background: var(--coral);
                     transform: rotate(-6deg);
                   "
+                  data-fil="pagpapasuri"
                   >testing</span
                 >
                 <span
@@ -101,6 +102,7 @@
                     background: var(--peri);
                     transform: rotate(7deg);
                   "
+                  data-fil="pag-iwas"
                   >prevention</span
                 >
                 <span
@@ -111,6 +113,7 @@
                     background: var(--cream);
                     transform: rotate(-4deg);
                   "
+                  data-fil="suporta"
                   >support</span
                 >
               </div>
@@ -122,7 +125,7 @@
             aria-labelledby="why-it-matters-title"
           >
              <div class="ticker" aria-hidden="true">
-              <div>
+              <div data-fil="magpasuri / sa sarili mong bilis / walang kahihiyan / alamin ang status mo / para sa kabataan / katotohanan, hindi takot / walang pressure / magpasuri / sa sarili mong bilis / walang kahihiyan / alamin ang status mo / para sa kabataan / katotohanan, hindi takot / walang pressure /">
                 get tested / at your own pace / no shame / know your status /
                 para sa kabataan / facts over fear / no pressure / get tested /
                 at your own pace / no shame / know your status / para sa
@@ -131,15 +134,15 @@
             </div>
             <div>
               <h2 class="disp" id="why-it-matters-title">
-                why it matters.
+                <span data-fil="bakit ito mahalaga.">why it matters.</span>
               </h2>
               <p class="lead">
-                HIV awareness saves lives, and stigma keeps people from getting
-                tested.
+                <span data-fil="Nagliligtas ng buhay ang kamalayan tungkol sa HIV, at pumipigil ang stigma sa mga tao na magpasuri.">HIV awareness saves lives, and stigma keeps people from getting
+                tested.</span>
               </p>
             </div>
             <div class="card c-cream why-stat-card">
-              <span class="sample">placeholder</span>
+              <span class="sample" data-fil="placeholder">placeholder</span>
               <h3
                 data-count="456789"
                 aria-label="456,789"
@@ -147,40 +150,40 @@
                 456,789
               </h3>
               <p>
-                [Sourced statistic goes here. Verify with DOH or UNAIDS data
-                before publishing.]
+                <span data-fil="[Ilagay rito ang estadistikang may mapagkakatiwalaang sanggunian. Beripikahin sa datos ng DOH o UNAIDS bago ilathala.]">[Sourced statistic goes here. Verify with DOH or UNAIDS data
+                before publishing.]</span>
               </p>
             </div>
           </section>
           <section class="home-explore-section" aria-labelledby="home-explore-title">
             <div class="home-explore">
               <h2 class="disp" id="home-explore-title">
-                find your next step.
+                <span data-fil="hanapin ang susunod mong hakbang.">find your next step.</span>
               </h2>
               <div class="grid staggered home-pathways-grid">
                 <a class="card c-pink" href="learn.html">
                   <span class="num">01</span>
                   <h3 data-fil="Gusto kong matuto.">I want to learn.</h3>
-                  <p>
+                  <p data-fil="Mga gabay sa HIV, pag-iwas, at kalusugang sekswal na madaling maintindihan.">
                     Plain-language guides on HIV, prevention and sexual health.
                   </p>
-                  <span class="go">Explore</span>
+                  <span class="go" data-fil="Tuklasin">Explore</span>
                 </a>
                 <a class="card c-coral" href="test.html">
                   <span class="num">02</span>
                   <h3 data-fil="Gusto kong magpa-test.">
                     I want to get tested.
                   </h3>
-                  <p>Find a testing site near you. Verified details only.</p>
-                  <span class="go">Find a site</span>
+                  <p data-fil="Humanap ng lugar para magpasuri na malapit sa iyo. Beripikadong detalye lamang.">Find a testing site near you. Verified details only.</p>
+                  <span class="go" data-fil="Humanap ng lugar">Find a site</span>
                 </a>
                 <a class="card c-peri" href="membership.html">
                   <span class="num">03</span>
                   <h3 data-fil="Gusto kong tumulong.">I want to help.</h3>
-                  <p>
+                  <p data-fil="Magboluntaryo, sumali sa mga kampanya, at makiisa sa komunidad.">
                     Volunteer, join campaigns, and stand with the community.
                   </p>
-                  <span class="go">Join us</span>
+                  <span class="go" data-fil="Sumali sa amin">Join us</span>
                 </a>
               </div>
             </div>
@@ -190,31 +193,31 @@
             aria-labelledby="home-myths-title"
           >
             <div class="home-myths-content">
-              <h2 class="disp" id="home-myths-title">myths vs. facts.</h2>
-              <p class="home-myths-intro">
+              <h2 class="disp" id="home-myths-title" data-fil="mga mito at katotohanan.">myths vs. facts.</h2>
+              <p class="home-myths-intro" data-fil="Mahalagang ibahagi ang katotohanan. Magsimula sa tatlong ito.">
                 The truth is worth sharing. Start with these three.
               </p>
               <div class="home-myths-grid">
                 <article class="home-myth-card">
-                  <span class="home-myth-label">myth</span>
-                  <h3>You can tell who has HIV by looking.</h3>
-                  <span class="home-fact-label">fact</span>
-                  <p>A test is the only way to know.</p>
+                  <span class="home-myth-label" data-fil="mito">myth</span>
+                  <h3 data-fil="Malalaman sa itsura kung sino ang may HIV.">You can tell who has HIV by looking.</h3>
+                  <span class="home-fact-label" data-fil="katotohanan">fact</span>
+                  <p data-fil="Pagsusuri lang ang makapagsasabi.">A test is the only way to know.</p>
                 </article>
                 <article class="home-myth-card">
-                  <span class="home-myth-label">myth</span>
-                  <h3>HIV spreads through hugs or sharing food.</h3>
-                  <span class="home-fact-label">fact</span>
-                  <p>HIV isn't spread through everyday contact.</p>
+                  <span class="home-myth-label" data-fil="mito">myth</span>
+                  <h3 data-fil="Naipapasa ang HIV sa pagyakap o pagsasalo ng pagkain.">HIV spreads through hugs or sharing food.</h3>
+                  <span class="home-fact-label" data-fil="katotohanan">fact</span>
+                  <p data-fil="Hindi naipapasa ang HIV sa pang-araw-araw na pakikisalamuha.">HIV isn't spread through everyday contact.</p>
                 </article>
                 <article class="home-myth-card">
-                  <span class="home-myth-label">myth</span>
-                  <h3>An HIV diagnosis means your life is over.</h3>
-                  <span class="home-fact-label">fact</span>
-                  <p>With treatment, people with HIV can live long, healthy lives.</p>
+                  <span class="home-myth-label" data-fil="mito">myth</span>
+                  <h3 data-fil="Katapusan na ng buhay kapag nasuring may HIV.">An HIV diagnosis means your life is over.</h3>
+                  <span class="home-fact-label" data-fil="katotohanan">fact</span>
+                  <p data-fil="Sa tulong ng gamutan, maaaring mamuhay nang mahaba at malusog ang mga taong may HIV.">With treatment, people with HIV can live long, healthy lives.</p>
                 </article>
               </div>
-              <a class="btn home-myths-link" href="learn.html">
+              <a class="btn home-myths-link" href="learn.html" data-fil="Tumuklas pa sa Matuto">
                 Explore more in Learn
               </a>
             </div>
@@ -224,32 +227,32 @@
             aria-labelledby="home-featured-title"
           >
             <div class="home-featured-content">
-              <h2 class="disp" id="home-featured-title">featured articles.</h2>
-              <p class="home-featured-intro">
+              <h2 class="disp" id="home-featured-title" data-fil="mga tampok na artikulo.">featured articles.</h2>
+              <p class="home-featured-intro" data-fil="Magpatuloy sa pagkatuto gamit ang mahahalagang kaalamang ito.">
                 Keep learning with these community essentials.
               </p>
               <div class="grid staggered home-featured-grid">
                 <a class="card c-pink" href="article.html#a-hiv">
                   <span class="num">01</span>
-                  <h3>understanding HIV</h3>
-                  <p>
+                  <h3 data-fil="pag-unawa sa HIV">understanding HIV</h3>
+                  <p data-fil="Paano naipapasa at hindi naipapasa ang HIV, at ano ang nagagawa ng gamutan.">
                     How HIV spreads, how it doesn't, and what treatment does.
                   </p>
-                  <span class="go">Read article</span>
+                  <span class="go" data-fil="Basahin ang artikulo">Read article</span>
                 </a>
                 <a class="card c-coral" href="article.html#a-protect">
                   <span class="num">02</span>
-                  <h3>protection and prevention</h3>
-                  <p>Condoms, PrEP, PEP and regular testing.</p>
-                  <span class="go">Read article</span>
+                  <h3 data-fil="proteksyon at pag-iwas">protection and prevention</h3>
+                  <p data-fil="Condom, PrEP, PEP, at regular na pagpapasuri.">Condoms, PrEP, PEP and regular testing.</p>
+                  <span class="go" data-fil="Basahin ang artikulo">Read article</span>
                 </a>
                 <a class="card c-cream" href="article.html#a-test">
                   <span class="num">03</span>
-                  <h3>testing and support</h3>
-                  <p>
+                  <h3 data-fil="pagpapasuri at suporta">testing and support</h3>
+                  <p data-fil="Paano isinasagawa ang pagsusuri, ano ang ibig sabihin ng gamutan, at saan hahanap ng tulong.">
                     How testing works, what treatment means, where to find help.
                   </p>
-                  <span class="go">Read article</span>
+                  <span class="go" data-fil="Basahin ang artikulo">Read article</span>
                 </a>
               </div>
             </div>
@@ -260,10 +263,10 @@
           >
             <div class="panel home-partners">
               <h2 class="disp" id="home-partners-title">
-                backed by trusted partners.
+                <span data-fil="sinusuportahan ng mga pinagkakatiwalaang partner.">backed by trusted partners.</span>
               </h2>
               <p class="note">
-                Placeholders until partnerships are confirmed.
+                <span data-fil="Mga placeholder habang hindi pa kumpirmado ang mga pakikipagtulungan.">Placeholders until partnerships are confirmed.</span>
               </p>
               <div class="home-partner-list">
                 <span class="ph">[Partner name]</span>
@@ -273,10 +276,10 @@
               </div>
             </div>
             <div class="home-partner-actions">
-              <a class="btn coral" href="membership.html">
+              <a class="btn coral" href="membership.html" data-fil="Sumali sa aming komunidad">
                 Join Our Community
               </a>
-              <a class="btn" href="contact.html">Contact Us</a>
+              <a class="btn" href="contact.html" data-fil="Makipag-ugnayan sa amin">Contact Us</a>
             </div>
           </section>
         </section>

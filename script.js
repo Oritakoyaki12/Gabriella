@@ -89,6 +89,75 @@ const N = {
   test: "testing and support",
 };
 
+const AF = {
+  hiv: {
+    tag: "pag-unawa sa HIV",
+    h: 'ipinaliwanag ang hiv.<br><span class="co">walang kahihiyan.</span>',
+    s: [
+      ["ano ang HIV?", "Ang HIV ay virus na umaatake sa immune system. Sa tulong ng gamutan, maaaring mamuhay nang mahaba at malusog ang mga taong may HIV."],
+      ["paano ito naipapasa at hindi naipapasa", "Naipapasa ang HIV sa pamamagitan ng dugo, semilya, likidong pre-seminal, likido sa puwit at puwerta, at gatas ng ina. Karaniwang nangyayari ito sa pakikipagtalik nang walang condom o PrEP, paggamit ng karayom ng iba, at mula magulang papunta sa sanggol habang nagbubuntis, nanganganak, o nagpapasuso. Hindi ito naipapasa sa pagyakap, pagsasalo ng pagkain, paggamit ng inidoro, o kagat ng lamok."],
+      ["M", "mito at katotohanan"],
+      ["epektibo ang gamutan", "Pinabababa ng ART ang dami ng virus sa katawan. Kapag nananatiling hindi matukoy ang virus dahil sa tuloy-tuloy na gamutan at regular na pagsusuri, hindi naipapasa ang HIV sa kapareha sa pamamagitan ng pakikipagtalik."],
+      ["ano ang susunod na maaari mong gawin", "Nakababawas ng panganib ang condom, PrEP, PEP (pagkatapos ng posibleng exposure, pinakamainam sa loob ng 72 oras), at regular na pagpapasuri. Maaari ka ring maghintay. Ang pagpapasuri lang ang makapagsasabi ng iyong status, at mabilis ito."],
+    ],
+    myths: [
+      ["Maaaring makakuha ng HIV sa pagyakap o pagsasalo ng pagkain.", "Hindi naipapasa ang HIV sa karaniwang pakikisalamuha gaya ng pagyakap, pagsasalo ng pagkain, o paggamit ng inidoro."],
+      ["Katapusan na ng buhay kapag may HIV.", "Sa tulong ng gamutan, maaaring mamuhay nang mahaba at malusog ang mga taong may HIV."],
+      ["Malalaman sa itsura kung sino ang may HIV.", "Pagsusuri lang ang makapagsasabi. Maraming tao ang walang sintomas sa loob ng maraming taon."],
+    ],
+  },
+  safe: {
+    tag: "ligtas na pakikipagtalik",
+    h: 'katawan mo.<br><span class="co">sarili mong bilis.</span>',
+    s: [
+      ["pahintulot muna", "Dapat malinaw at kusang-loob ang pahintulot, at maaari itong bawiin anumang oras. Hindi mo obligasyong makipagtalik, at ayos lang piliing maghintay."],
+      ["kontrasepsyon at proteksyon", "Nakakatulong ang condom na maiwasan ang pagbubuntis at maraming impeksyon, kabilang ang HIV. Ang ibang paraan, gaya ng pills o implants, ay pumipigil sa pagbubuntis pero hindi sa HIV."],
+      ["pag-usapan ito", "Bahagi ng paggalang ang pakikipag-usap sa kapareha tungkol sa hangganan, proteksyon, at pagpapasuri. Maaaring sumagot ang health worker nang walang panghuhusga."],
+    ],
+  },
+  protect: {
+    tag: "proteksyon at pag-iwas",
+    h: 'bawasan ang panganib.<br><span class="co">sa paraang gusto mo.</span>',
+    s: [
+      ["condom", "Kapag ginamit nang tama sa bawat pagkakataon, mabisang panangga ang condom laban sa HIV at iba pang impeksyon."],
+      ["PrEP at PEP", "Gamot ang PrEP na iniinom bago ang posibleng exposure. Ini-inom naman ang PEP pagkatapos ng posibleng exposure, pinakamainam sa loob ng 72 oras. Kailangan ng health provider para sa dalawa; magtanong sa malapit na pasilidad tungkol sa availability."],
+      ["regular na pagpapasuri at huwag maghiraman ng karayom", "Nakakatulong ang regular na pagpapasuri para maging may alam ka at ang mga kapareha mo. Huwag maghiraman ng karayom o hiringgilya."],
+    ],
+  },
+  test: {
+    tag: "pagpapasuri at suporta",
+    h: 'alamin ang status mo.<br><span class="co">humingi ng suporta.</span>',
+    s: [
+      ["paano isinasagawa ang pagsusuri", "Karaniwan itong mabilis na pagsusuri gamit ang tusok sa daliri o sample ng dugo, at maikling pag-uusap bago at pagkatapos. Maaaring hindi makita agad ang napakabagong exposure; sasabihin ng provider kung kailan dapat magpasuri muli."],
+      ["kung positibo ang resulta", "Nagagamot ang HIV sa pamamagitan ng ART. Nakakatulong ang tuloy-tuloy na gamutan para manatiling malusog at hindi maipasa ang virus. Makakasama mo ang mga support group at counselor."],
+      ["iyong privacy", "Bago pumunta, itanong sa pasilidad kung paano nila pinoprotektahan ang impormasyon mo. Sa iyo ang impormasyon tungkol sa kalusugan mo."],
+    ],
+  },
+};
+
+const NFIL = {
+  hiv: "pag-unawa sa HIV",
+  safe: "ligtas na pakikipagtalik",
+  protect: "proteksyon at pag-iwas",
+  test: "pagpapasuri at suporta",
+};
+
+const UI_FIL = {
+  "Reviewed by [Partner name]": "Sinuri ni [Pangalan ng partner]",
+  "Updated [date]": "Na-update noong [petsa]",
+  "myth vs fact": "mito at katotohanan",
+  myth: "mito",
+  fact: "katotohanan",
+  "Draft copy for the prototype. Have partner health workers review it before publishing.": "Burador lamang para sa prototype. Ipasuri ito sa mga health worker bago ilathala.",
+  "sample data": "halimbawang datos",
+  "Last verified: [date]": "Huling sinuri: [petsa]",
+  "No sample sites match. Try fewer filters or another city.": "Walang tugmang sample na pasilidad. Bawasan ang mga filter o sumubok ng ibang lungsod.",
+  "free": "libre",
+  "walk-in": "walang appointment",
+  "youth-friendly": "angkop para sa kabataan",
+  "online booking": "online na pagpapa-book",
+};
+
 const S = [
   [
     "Testing site name A",
@@ -141,16 +210,17 @@ function route() {
 
 function art(key) {
   const article = A[key];
-  $("#atag").textContent = article.tag;
-  $("#ah").innerHTML = article.h;
+  const copy = translated ? AF[key] : article;
+  $("#atag").textContent = copy.tag;
+  $("#ah").innerHTML = copy.h;
 
   let output =
-    '<p><span class="mini">Reviewed by [Partner name]</span><span class="mini">Updated [date]</span></p>';
+    `<p><span class="mini">${translated ? UI_FIL["Reviewed by [Partner name]"] : "Reviewed by [Partner name]"}</span><span class="mini">${translated ? UI_FIL["Updated [date]"] : "Updated [date]"}</span></p>`;
 
-  article.s.forEach((section) => {
+  copy.s.forEach((section) => {
     if (section[0] === "M") {
-      output += "<h2>myth vs fact</h2>";
-      const myths = [
+      output += `<h2>${translated ? UI_FIL["myth vs fact"] : "myth vs fact"}</h2>`;
+      const myths = translated ? copy.myths : [
         [
           "You can get HIV from hugging or sharing food.",
           "HIV isn’t spread through casual contact like hugs, shared meals or toilet seats.",
@@ -168,8 +238,8 @@ function art(key) {
         .map(
           (item) => `
         <div class="mf">
-          <div style="background:var(--coral)"><small>myth</small>${item[0]}</div>
-          <div style="background:var(--peri)"><small>fact</small>${item[1]}</div>
+          <div style="background:var(--coral)"><small>${translated ? UI_FIL.myth : "myth"}</small>${item[0]}</div>
+          <div style="background:var(--peri)"><small>${translated ? UI_FIL.fact : "fact"}</small>${item[1]}</div>
         </div>
       `,
         )
@@ -179,13 +249,12 @@ function art(key) {
     }
   });
 
-  output +=
-    '<p class="note" style="margin-top:20px">Draft copy for the prototype. Have partner health workers review it before publishing.</p>';
+  output += `<p class="note" style="margin-top:20px">${translated ? UI_FIL["Draft copy for the prototype. Have partner health workers review it before publishing."] : "Draft copy for the prototype. Have partner health workers review it before publishing."}</p>`;
   $("#ab").innerHTML = output;
   $("#rel").innerHTML = article.rel
     .map(
       (key) =>
-        `<p style="margin:6px 0"><a href="article.html#a-${key}"><b>${N[key]}</b></a></p>`,
+        `<p style="margin:6px 0"><a href="article.html#a-${key}"><b>${translated ? NFIL[key] : N[key]}</b></a></p>`,
     )
     .join("");
 }
@@ -205,16 +274,16 @@ function sites() {
         .map(
           (site) => `
       <div class="card ${site[4]} site">
-        <span class="sample">sample data</span>
+        <span class="sample">${translated ? UI_FIL["sample data"] : "sample data"}</span>
         <h3>${site[0]}</h3>
         <p>${site[1]}<br>${site[2]}</p>
-        ${site[3].map((filter) => `<span class="mini">${filter}</span>`).join("")}
-        <p class="note" style="margin-top:10px">Last verified: [date]</p>
+        ${site[3].map((filter) => `<span class="mini">${translated ? UI_FIL[filter] : filter}</span>`).join("")}
+        <p class="note" style="margin-top:10px">${translated ? UI_FIL["Last verified: [date]"] : "Last verified: [date]"}</p>
       </div>
     `,
         )
         .join("")
-    : '<div class="panel">No sample sites match. Try fewer filters or another city.</div>';
+    : `<div class="panel">${translated ? UI_FIL["No sample sites match. Try fewer filters or another city."] : "No sample sites match. Try fewer filters or another city."}</div>`;
 }
 
 function initTestPage() {
@@ -388,11 +457,30 @@ try {
 
 function applyLanguage() {
   $$("[data-fil]").forEach((element) => {
-    if (!element.dataset.en) element.dataset.en = element.textContent;
-    element.textContent = translated ? element.dataset.fil : element.dataset.en;
+    if (!element.dataset.enHtml) element.dataset.enHtml = element.innerHTML;
+    element.innerHTML = translated ? element.dataset.fil : element.dataset.enHtml;
+  });
+  $$("[data-fil-placeholder]").forEach((element) => {
+    if (!element.dataset.enPlaceholder) {
+      element.dataset.enPlaceholder = element.placeholder;
+    }
+    element.placeholder = translated
+      ? element.dataset.filPlaceholder
+      : element.dataset.enPlaceholder;
+  });
+  $$("[data-fil-aria-label]").forEach((element) => {
+    if (!element.dataset.enAriaLabel) {
+      element.dataset.enAriaLabel = element.getAttribute("aria-label") || "";
+    }
+    element.setAttribute(
+      "aria-label",
+      translated ? element.dataset.filAriaLabel : element.dataset.enAriaLabel,
+    );
   });
   document.documentElement.lang = translated ? "fil" : "en";
-  $("#lang").setAttribute("aria-pressed", String(translated));
+  const languageButton = $("#lang");
+  if (!languageButton) return;
+  languageButton.setAttribute("aria-pressed", String(translated));
   $$(".language-option", $("#lang")).forEach((option) => {
     const active =
       option.dataset.language === (translated ? "fil" : "en");
@@ -413,9 +501,15 @@ $("#lang").onclick = () => {
   try {
     localStorage.setItem("glang", translated ? "fil" : "en");
   } catch (error) {}
+  if (document.body.dataset.page === "article") {
+    const articleKey = location.hash.slice(1).replace(/^a-/, "") || "hiv";
+    art(A[articleKey] ? articleKey : "hiv");
+  }
+  if (document.body.dataset.page === "test") sites();
   applyLanguage();
 };
 
+document.addEventListener("sitecomponentsready", applyLanguage);
 addEventListener("hashchange", route);
 route();
 initWhyStat();
