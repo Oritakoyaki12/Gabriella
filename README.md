@@ -15,6 +15,7 @@ Then open the URL printed by the server.
 - `index.html` redirects to the home page.
 - `components.js` renders the reusable header and footer on each page.
 - `pages/` contains standalone HTML pages.
+- `assets/images/` contains images used by the pages, including `safe-sex.jpg`.
 - `script.js` handles articles, testing, forms, and language behavior.
 - `styles.css` contains the shared styles.
 
@@ -26,3 +27,5 @@ attribute to the element while keeping its English text as the element content.
 Use `data-fil-placeholder` for input placeholders and `data-fil-aria-label` for
 accessible labels. Translations for content rendered by `script.js`, such as
 articles and testing-site results, are maintained there.
+
+The Learn page displays `assets/images/safe-sex.jpg` beside its introduction.

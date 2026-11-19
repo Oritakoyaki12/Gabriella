@@ -477,6 +477,10 @@ function applyLanguage() {
       translated ? element.dataset.filAriaLabel : element.dataset.enAriaLabel,
     );
   });
+  $$("[data-fil-alt]").forEach((element) => {
+    if (!element.dataset.enAlt) element.dataset.enAlt = element.alt;
+    element.alt = translated ? element.dataset.filAlt : element.dataset.enAlt;
+  });
   document.documentElement.lang = translated ? "fil" : "en";
   const languageButton = $("#lang");
   if (!languageButton) return;

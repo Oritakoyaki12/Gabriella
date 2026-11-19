@@ -24,6 +24,20 @@ html {
   height: 100%;
 }
 
+html[data-scroll-snap="home"] {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: calc(96px + env(safe-area-inset-top, 0px));
+}
+
+body[data-page="home"] .hero,
+body[data-page="home"] .why-section,
+body[data-page="home"] .home-explore-section,
+body[data-page="home"] .home-myths-section,
+body[data-page="home"] .home-featured-section,
+body[data-page="home"] .home-partners-section {
+  scroll-snap-align: start;
+}
+
 body {
   margin: 0;
   min-height: 100%;
@@ -69,6 +83,7 @@ h3,
   line-height: .98;
   letter-spacing: -.025em;
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 a {
@@ -110,11 +125,12 @@ a {
 }
 
 .wrap {
+  --wrap-gutter: clamp(16px, 2vw, 28px);
   position: relative;
   z-index: 1;
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 clamp(16px, 2vw, 28px);
+  padding: 0 var(--wrap-gutter);
 }
 
 header {
@@ -328,8 +344,9 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid var(--pink);
+  outline: 3px solid #fff;
   outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--navy);
 }
 
 section.page {
@@ -374,7 +391,7 @@ h1 .pill {
 }
 
 h1 .co {
-  color: var(--coral);
+  color: var(--red);
 }
 
 .dot {
@@ -392,6 +409,24 @@ h1 .co {
   grid-template-columns: 1.2fr 1fr;
   gap: 36px;
   align-items: start;
+}
+
+.learn-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .85fr);
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+  margin-bottom: 36px;
+}
+
+.learn-intro-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border: 2px solid rgba(8, 11, 53, .16);
+  border-radius: 30px;
+  box-shadow: 0 18px 40px rgba(8, 11, 53, .2);
 }
 
 .hero-actions {
@@ -436,12 +471,12 @@ h1 .co {
 .ticker {
   position: relative;
   z-index: 1;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   background: var(--coral);
   color: var(--navy);
   transform: rotate(-1.4deg);
-  margin: 40px 0 40px calc(50% - 50vw);
+  margin: 40px 0;
   padding: 12px 0;
   font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 800;
@@ -465,6 +500,10 @@ h1 .co {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html[data-scroll-snap="home"] {
+    scroll-snap-type: none;
+  }
+
   *,
   *::before,
   *::after {
@@ -605,10 +644,10 @@ body[data-page="home"] .home-pathways-grid .card p {
 .home-explore-section {
   display: grid;
   align-content: center;
-  width: 100vw;
+  width: calc(100% + var(--wrap-gutter) + var(--wrap-gutter));
   min-height: 100vh;
   min-height: 100svh;
-  margin-left: calc(50% - 50vw);
+  margin-left: calc(0px - var(--wrap-gutter));
   padding: clamp(108px, 12vh, 150px) clamp(24px, 8vw, 120px)
     clamp(64px, 10vh, 120px);
   background: transparent;
@@ -641,10 +680,10 @@ body[data-page="home"] .home-pathways-grid {
 .home-myths-section {
   display: grid;
   align-content: center;
-  width: 100vw;
+  width: calc(100% + var(--wrap-gutter) + var(--wrap-gutter));
   min-height: 100vh;
   min-height: 100svh;
-  margin-left: calc(50% - 50vw);
+  margin-left: calc(0px - var(--wrap-gutter));
   padding: clamp(108px, 12vh, 150px) clamp(24px, 8vw, 120px)
     clamp(64px, 10vh, 120px);
   background: transparent;
@@ -758,10 +797,10 @@ body[data-page="home"] .home-pathways-grid {
 .home-featured-section {
   display: grid;
   align-content: center;
-  width: 100vw;
+  width: calc(100% + var(--wrap-gutter) + var(--wrap-gutter));
   min-height: 100vh;
   min-height: 100svh;
-  margin-left: calc(50% - 50vw);
+  margin-left: calc(0px - var(--wrap-gutter));
   padding: clamp(108px, 12vh, 150px) clamp(24px, 8vw, 120px)
     clamp(64px, 10vh, 120px);
   background: transparent;
@@ -810,10 +849,10 @@ body[data-page="home"] .home-pathways-grid {
   place-items: center;
   align-content: center;
   gap: 24px;
-  width: 100vw;
+  width: calc(100% + var(--wrap-gutter) + var(--wrap-gutter));
   min-height: 100vh;
   min-height: 100svh;
-  margin-left: calc(50% - 50vw);
+  margin-left: calc(0px - var(--wrap-gutter));
   padding: clamp(108px, 12vh, 150px) clamp(24px, 8vw, 120px)
     clamp(64px, 10vh, 120px);
   background: transparent;
@@ -822,6 +861,7 @@ body[data-page="home"] .home-pathways-grid {
 
 .home-partners {
   width: 100%;
+  min-width: 0;
   max-width: 980px;
   padding: clamp(28px, 5vw, 64px);
   background: rgba(8, 11, 53, .05);
@@ -830,7 +870,8 @@ body[data-page="home"] .home-pathways-grid {
 }
 
 .home-partners h2 {
-  font-size: clamp(40px, 6vw, 72px);
+  font-size: clamp(30px, 6vw, 72px);
+  overflow-wrap: anywhere;
 }
 
 .home-partners .note {
@@ -1311,6 +1352,7 @@ footer a {
   }
 
   .hero,
+  .learn-intro,
   .two,
   .form-page-layout,
   .sites {
@@ -1345,7 +1387,7 @@ footer a {
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
       "brand language"
-      "links links links";
+      "links links";
     gap: 8px;
     padding: 10px 12px;
     border-radius: 24px;
@@ -1374,15 +1416,31 @@ footer a {
 }
 
 @media (max-width: 600px) {
+  .why-stat-card.is-pending {
+    transform: translateY(18px);
+  }
+
+  @keyframes why-stat-slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .nav {
     grid-template-areas:
       "brand language"
-      "links links links";
+      "links links";
     padding: 10px;
   }
 
   .links {
-    grid-column: 1 / -1;
+    grid-area: links;
     flex-wrap: wrap;
     overflow: visible;
   }
@@ -1485,10 +1543,10 @@ footer {
   grid-template-rows: auto 1fr;
   align-items: center;
   gap: clamp(32px, 7vw, 100px);
-  width: 100vw;
+  width: calc(100% + var(--wrap-gutter) + var(--wrap-gutter));
   min-height: 100vh;
   min-height: 100svh;
-  margin-left: calc(50% - 50vw);
+  margin-left: calc(0px - var(--wrap-gutter));
   padding: clamp(64px, 10vh, 120px) clamp(24px, 14vw, 220px);
   padding-top: clamp(108px, 12vh, 150px);
   background: transparent;
@@ -1498,6 +1556,7 @@ footer {
 .why-section .ticker {
   grid-column: 1 / -1;
   justify-self: center;
+  width: 100%;
   margin: 0 0 clamp(28px, 5vh, 48px);
   transform: none;
 }
@@ -1553,7 +1612,7 @@ footer {
 
 @media (max-width: 900px) {
   .why-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto auto;
     align-content: center;
     gap: 48px;
@@ -1562,6 +1621,12 @@ footer {
 
   .why-section .why-stat-card {
     justify-self: start;
+    min-width: 0;
+  }
+
+  .why-section .why-stat-card h3 {
+    font-size: clamp(40px, 12vw, 72px);
+    white-space: normal;
   }
 
   .why-section .why-stat-card::before {
@@ -1589,10 +1654,4 @@ body[data-page="home"] .home-featured-section,
 body[data-page="home"] .home-partners-section,
 body[data-page="home"] .why-section {
   color: var(--navy);
-}
-
-.btn:focus-visible,
-.lang:focus-visible,
-a:focus-visible {
-  outline-color: var(--navy);
 }
