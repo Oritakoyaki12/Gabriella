@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,100 +7,251 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <title data-fil="Humanap ng lugar para magpasuri — Gabriella">Find a testing site — Gabriella</title>
+
+    <title data-fil="Humanap ng lugar para magpasuri — Gabriella">
+      Find a testing site — Gabriella
+    </title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="../styles.css" />
   </head>
+
   <body data-page="test">
+
     <div class="wrap">
+
+      <!-- HEADER -->
       <header id="site-header"></header>
       <script src="../components.js"></script>
+
       <main id="main-content" tabindex="-1">
+
         <section class="page show" data-p="test">
-          <span class="tag" data-fil="magpasuri">get tested</span>
-          <h1 data-fil="maghanap ng lugar para sa <span class=&quot;pill&quot;>pagpapasuri</span><span class=&quot;co&quot;>.</span>">
-            find a <span class="pill">testing</span> site<span class="co"
-              >.</span
-            >
-          </h1>
-          <div class="search" style="margin-top: 28px">
-            <label class="sr-only" for="q" data-fil="Maghanap ayon sa lungsod o barangay">Search by city or barangay</label>
+
+          <!-- PAGE INTRO -->
+          <span class="tag" data-fil="magpasuri">
+            get tested
+          </span>
+
+          <div class="testing-intro">
+
+            <h1 data-fil="maghanap ng lugar para sa <span class=&quot;pill&quot;>pagpapasuri</span><span class=&quot;co&quot;>.</span>">
+              find a <span class="pill">testing</span> site<span class="co">.</span>
+            </h1>
+
+            <p class="lead">
+              Find nearby facilities offering HIV testing and sexual
+              health services. Everyone deserves access to safe,
+              respectful, and confidential healthcare.
+            </p>
+
+          </div>
+
+          <!-- SEARCH -->
+          <div class="search">
+
+            <label class="sr-only" for="q">
+              Search by city or barangay
+            </label>
+
             <input
               id="q"
+              type="search"
               placeholder="Search by city or barangay"
               data-fil-placeholder="Maghanap ayon sa lungsod o barangay"
-              type="search"
             />
-            <button class="btn" id="qb" data-fil="Maghanap">Search</button>
+
+            <button
+              class="btn"
+              id="qb"
+              type="button"
+              data-fil="Maghanap"
+            >
+              Search
+            </button>
+
           </div>
+
+          <!-- FILTERS -->
           <fieldset class="filter-set">
-            <legend data-fil="I-filter ang mga lugar ng pagpapasuri">Filter testing sites</legend>
+
+            <legend data-fil="I-filter ang mga lugar ng pagpapasuri">
+              Filter testing sites
+            </legend>
+
             <div class="chips" id="chips">
-              <button type="button" class="chip" aria-pressed="false" data-t="free">
+
+              <button
+                type="button"
+                class="chip"
+                aria-pressed="false"
+                data-t="free"
+              >
                 <span data-fil="libre">free</span>
               </button>
-              <button type="button" class="chip" aria-pressed="false" data-t="walk-in">
+
+              <button
+                type="button"
+                class="chip"
+                aria-pressed="false"
+                data-t="walk-in"
+              >
                 <span data-fil="walang appointment">walk-in</span>
               </button>
-              <button type="button" class="chip" aria-pressed="false" data-t="youth-friendly">
-                <span data-fil="angkop para sa kabataan">youth-friendly</span>
+
+              <button
+                type="button"
+                class="chip"
+                aria-pressed="false"
+                data-t="hiv testing"
+              >
+                HIV testing
               </button>
-              <button type="button" class="chip" aria-pressed="false" data-t="online booking">
-                <span data-fil="online na pagpapa-book">online booking</span>
+
+              <button
+                type="button"
+                class="chip"
+                aria-pressed="false"
+                data-t="sti services"
+              >
+                STI services
               </button>
+
             </div>
+
           </fieldset>
-          <p class="note">
-            <span data-fil="Mga halimbawang listahan lamang. Kailangang beripikahin ang totoong mga entry at lagyan ng petsa ng huling pagsusuri bago ilathala. Huwag ipagpalagay na may serbisyo ang isang lugar hangga't hindi ito kumpirmado.">Sample listings only. Real entries must be verified, with a “last
-            verified” date, before publishing. Don’t assume a site offers a
-            service until confirmed.</span>
+
+          <!-- DIRECTORY NOTICE -->
+          <p class="directory-notice">
+            <strong>Important:</strong>
+            These are sample directory entries. Services, operating
+            hours, and availability may change. Contact the facility
+            or check its official page before visiting.
           </p>
+
+          <!-- TESTING SITES AND MAP -->
           <div class="sites">
-            <div id="sl" aria-live="polite"></div>
-            <div class="map" role="img" aria-label="Decorative map placeholder" data-fil-aria-label="Pampalamuting placeholder ng mapa">
-              <svg aria-hidden="true" viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice">
-                <g stroke="#EDE9FA" stroke-width="14" fill="none">
-                  <path
-                    d="M0 70H400M0 180H400M0 270H400M90 0V340M230 0V340M330 0V340"
-                  />
-                </g>
-                <path d="M0 120H400" stroke="#FFC6DD" stroke-width="8" />
-                <g fill="#FF5A3C" stroke="#080B35" stroke-width="5">
-                  <circle cx="110" cy="85" r="14" />
-                  <circle cx="250" cy="170" r="14" />
-                  <circle cx="170" cy="250" r="14" />
-                </g>
-                <circle cx="340" cy="290" r="40" fill="#FFC6DD" opacity=".8" />
-              </svg>
+
+            <!-- SITE RESULTS -->
+            <div class="site-results">
+
+              <p
+                class="site-count"
+                id="site-count"
+                aria-live="polite"
+              ></p>
+
+              <div
+                class="site-list"
+                id="sl"
+                aria-live="polite"
+              ></div>
+
             </div>
+
+            <!-- MAP -->
+            <div class="map site-map">
+
+              <iframe
+                id="site-map"
+                title="Map showing testing site locations"
+                src="https://www.google.com/maps?q=Quezon+City+Philippines&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+
+            </div>
+
           </div>
-          <div class="grid equal-columns" style="margin-top: 26px">
+
+          <!-- WHAT TO EXPECT + SUPPORT -->
+          <div class="grid equal-columns" style="margin-top: 30px">
+
             <div class="panel">
-              <h3 class="disp" style="font-size: 28px" data-fil="ano ang aasahan">what to expect</h3>
+
+              <h3
+                class="disp"
+                style="font-size: 28px"
+                data-fil="ano ang aasahan"
+              >
+                what to expect.
+              </h3>
+
               <p>
-                <span data-fil="Maikling pag-uusap, mabilis na pagsusuri, at talakayan tungkol sa resulta. Tanungin ang pasilidad kung paano nila pinananatiling pribado at kumpidensyal ang impormasyon bago ka pumunta. Sa iyo ang impormasyon tungkol sa kalusugan mo. Walang dapat mang-pressure sa iyo.">A short chat, a quick test and a talk about your result. Ask the
-                site about privacy and confidentiality before you go. Your
-                health information is yours. No one should pressure you.</span>
+                A short consultation, a testing procedure, and a
+                discussion about your results.
               </p>
+
+              <p>
+                Ask the facility about confidentiality, costs,
+                and requirements before visiting.
+              </p>
+
+              <p>
+                You have the right to ask questions and make
+                informed decisions about your health.
+              </p>
+
             </div>
+
             <div class="card c-cream" style="margin-top: 0">
-              <h3 style="font-size: 28px" data-fil="mga hotline at online na suporta">hotlines and online support</h3>
+
+              <h3
+                style="font-size: 28px"
+                data-fil="mga hotline at online na suporta"
+              >
+                hotlines and online support.
+              </h3>
+
               <p>
-                <span class="sample">placeholder</span><br /><b
-                  >[Hotline name]:</b
-                >
-                [number]<br /><b>[Online support]:</b> [website]
+                Need information or assistance? Explore these
+                official resources.
               </p>
+
+              <p>
+                <a
+                  href="https://loveyourself.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LoveYourself →
+                </a>
+              </p>
+
+              <p>
+                <a
+                  href="https://hivcareph.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  HIV Care PH →
+                </a>
+              </p>
+
             </div>
+
           </div>
+
         </section>
+
       </main>
+
     </div>
+
+    <!-- FOOTER -->
     <footer id="site-footer"></footer>
+
+    <!-- SCRIPTS -->
+    <script src="../testing-sites.js"></script>
     <script src="../script.js"></script>
+
   </body>
 </html>

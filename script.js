@@ -14,11 +14,11 @@ const A = {
       ["M", "myth vs fact"],
       [
         "treatment works",
-        "Treatment called ART keeps the amount of virus in the body very low. When it stays undetectable through steady treatment and regular viral load tests, HIV cannot be passed on to a partner through sex.",
+        "Treatment called antiretroviral therapy (ART) keeps the amount of virus in the body very low. When it stays undetectable through steady treatment and regular viral load tests, HIV cannot be passed on to a partner through sex.",
       ],
       [
         "what to do next",
-        "Condoms, PrEP, PEP (after a possible exposure, ideally within 72 hours) and regular testing all lower your risk. Waiting is a valid choice too. Testing is the only way to know your status, and it’s quick.",
+        "Condoms, PrEP, PEP (after a possible exposure, as soon as possible and no later than 72 hours) and regular testing all lower your risk. Waiting is a valid choice too. Testing is the only way to know your status, and it’s quick.",
       ],
     ],
     rel: ["safe", "protect", "test"],
@@ -52,7 +52,7 @@ const A = {
       ],
       [
         "PrEP and PEP",
-        "PrEP is medicine taken before possible exposure. PEP is taken after a possible exposure, ideally within 72 hours. Both need a health provider, so ask a site near you about availability.",
+        "PrEP is medicine taken before possible exposure, and you take an HIV test before starting. PEP is taken after a possible exposure, as soon as possible and no later than 72 hours, and is taken daily for 28 days. Both need a health provider, so ask a site near you about availability.",
       ],
       [
         "regular testing and not sharing needles",
@@ -67,11 +67,15 @@ const A = {
     s: [
       [
         "how testing works",
-        "A quick test, usually a finger-prick or blood sample, with a short chat before and after. Very recent exposure may not show yet, so a provider can tell you when to retest.",
+        "A quick test, usually a finger-prick or blood sample, with a short chat before and after. Very recent exposure may not show yet, so a provider can tell you when to retest. If a rapid test or self-test is positive, a follow-up test confirms the result.",
+      ],
+      [
+        "who can get tested",
+        "In the Philippines, people aged 15 to under 18 can get tested without a parent’s or guardian’s consent (RA 11166). Younger people who are pregnant or engaged in high-risk behavior can also be tested with the help of a licensed social or health worker.",
       ],
       [
         "if the result is positive",
-        "HIV is manageable with treatment (ART). Staying on treatment helps you stay healthy and keeps the virus from being passed on. Support groups and counselors can walk with you.",
+        "HIV is manageable with antiretroviral therapy (ART). Staying on treatment helps you stay healthy and keeps the virus from being passed on. Support groups and counselors can walk with you.",
       ],
       [
         "your privacy",
@@ -97,8 +101,8 @@ const AF = {
       ["ano ang HIV?", "Ang HIV ay virus na umaatake sa immune system. Sa tulong ng gamutan, maaaring mamuhay nang mahaba at malusog ang mga taong may HIV."],
       ["paano ito naipapasa at hindi naipapasa", "Naipapasa ang HIV sa pamamagitan ng dugo, semilya, likidong pre-seminal, likido sa puwit at puwerta, at gatas ng ina. Karaniwang nangyayari ito sa pakikipagtalik nang walang condom o PrEP, paggamit ng karayom ng iba, at mula magulang papunta sa sanggol habang nagbubuntis, nanganganak, o nagpapasuso. Hindi ito naipapasa sa pagyakap, pagsasalo ng pagkain, paggamit ng inidoro, o kagat ng lamok."],
       ["M", "mito at katotohanan"],
-      ["epektibo ang gamutan", "Pinabababa ng ART ang dami ng virus sa katawan. Kapag nananatiling hindi matukoy ang virus dahil sa tuloy-tuloy na gamutan at regular na pagsusuri, hindi naipapasa ang HIV sa kapareha sa pamamagitan ng pakikipagtalik."],
-      ["ano ang susunod na maaari mong gawin", "Nakababawas ng panganib ang condom, PrEP, PEP (pagkatapos ng posibleng exposure, pinakamainam sa loob ng 72 oras), at regular na pagpapasuri. Maaari ka ring maghintay. Ang pagpapasuri lang ang makapagsasabi ng iyong status, at mabilis ito."],
+      ["epektibo ang gamutan", "Pinabababa ng antiretroviral therapy (ART) ang dami ng virus sa katawan. Kapag nananatiling hindi matukoy ang virus dahil sa tuloy-tuloy na gamutan at regular na pagsusuri, hindi naipapasa ang HIV sa kapareha sa pamamagitan ng pakikipagtalik."],
+      ["ano ang susunod na maaari mong gawin", "Nakababawas ng panganib ang condom, PrEP, PEP (pagkatapos ng posibleng exposure, sa lalong madaling panahon at hindi lalampas sa 72 oras), at regular na pagpapasuri. Maaari ka ring maghintay. Ang pagpapasuri lang ang makapagsasabi ng iyong status, at mabilis ito."],
     ],
     myths: [
       ["Maaaring makakuha ng HIV sa pagyakap o pagsasalo ng pagkain.", "Hindi naipapasa ang HIV sa karaniwang pakikisalamuha gaya ng pagyakap, pagsasalo ng pagkain, o paggamit ng inidoro."],
@@ -120,7 +124,7 @@ const AF = {
     h: 'bawasan ang panganib.<br><span class="co">sa paraang gusto mo.</span>',
     s: [
       ["condom", "Kapag ginamit nang tama sa bawat pagkakataon, mabisang panangga ang condom laban sa HIV at iba pang impeksyon."],
-      ["PrEP at PEP", "Gamot ang PrEP na iniinom bago ang posibleng exposure. Ini-inom naman ang PEP pagkatapos ng posibleng exposure, pinakamainam sa loob ng 72 oras. Kailangan ng health provider para sa dalawa; magtanong sa malapit na pasilidad tungkol sa availability."],
+      ["PrEP at PEP", "Gamot ang PrEP na iniinom bago ang posibleng exposure, at kailangan munang magpa-HIV test bago simulan ito. Iniinom naman ang PEP pagkatapos ng posibleng exposure, sa lalong madaling panahon at hindi lalampas sa 72 oras, at iniinom ito araw-araw sa loob ng 28 araw. Kailangan ng health provider para sa dalawa; magtanong sa malapit na pasilidad tungkol sa availability."],
       ["regular na pagpapasuri at huwag maghiraman ng karayom", "Nakakatulong ang regular na pagpapasuri para maging may alam ka at ang mga kapareha mo. Huwag maghiraman ng karayom o hiringgilya."],
     ],
   },
@@ -128,8 +132,9 @@ const AF = {
     tag: "pagpapasuri at suporta",
     h: 'alamin ang status mo.<br><span class="co">humingi ng suporta.</span>',
     s: [
-      ["paano isinasagawa ang pagsusuri", "Karaniwan itong mabilis na pagsusuri gamit ang tusok sa daliri o sample ng dugo, at maikling pag-uusap bago at pagkatapos. Maaaring hindi makita agad ang napakabagong exposure; sasabihin ng provider kung kailan dapat magpasuri muli."],
-      ["kung positibo ang resulta", "Nagagamot ang HIV sa pamamagitan ng ART. Nakakatulong ang tuloy-tuloy na gamutan para manatiling malusog at hindi maipasa ang virus. Makakasama mo ang mga support group at counselor."],
+      ["paano isinasagawa ang pagsusuri", "Karaniwan itong mabilis na pagsusuri gamit ang tusok sa daliri o sample ng dugo, at maikling pag-uusap bago at pagkatapos. Maaaring hindi makita agad ang napakabagong exposure; sasabihin ng provider kung kailan dapat magpasuri muli. Kung positibo ang rapid test o self-test, may kasunod na pagsusuri para kumpirmahin ang resulta."],
+      ["sino ang maaaring magpasuri", "Sa Pilipinas, maaaring magpasuri ang mga edad 15 hanggang wala pang 18 nang hindi kailangan ang pahintulot ng magulang o tagapag-alaga (RA 11166). Maaari ring magpasuri ang mas bata pa kung buntis o may mataas na panganib ang gawain, sa tulong ng lisensyadong social worker o health worker."],
+      ["kung positibo ang resulta", "Nagagamot ang HIV sa pamamagitan ng antiretroviral therapy (ART). Nakakatulong ang tuloy-tuloy na gamutan para manatiling malusog at hindi maipasa ang virus. Makakasama mo ang mga support group at counselor."],
       ["iyong privacy", "Bago pumunta, itanong sa pasilidad kung paano nila pinoprotektahan ang impormasyon mo. Sa iyo ang impormasyon tungkol sa kalusugan mo."],
     ],
   },
@@ -143,8 +148,8 @@ const NFIL = {
 };
 
 const UI_FIL = {
-  "Reviewed by [Partner name]": "Sinuri ni [Pangalan ng partner]",
-  "Updated [date]": "Na-update noong [petsa]",
+  "Draft: sources checked against CDC and WHO": "Burador: sinuri ang mga sanggunian laban sa CDC at WHO",
+  "Updated Nov 23, 2026": "Na-update noong Nob 23, 2026",
   "myth vs fact": "mito at katotohanan",
   myth: "mito",
   fact: "katotohanan",
@@ -158,29 +163,6 @@ const UI_FIL = {
   "online booking": "online na pagpapa-book",
 };
 
-const S = [
-  [
-    "Testing site name A",
-    "[Street address], [City]",
-    "[Opening hours]",
-    ["free", "walk-in"],
-    "c-cream",
-  ],
-  [
-    "Testing site name B",
-    "[Street address], [City]",
-    "[Opening hours]",
-    ["youth-friendly", "online booking"],
-    "c-pink",
-  ],
-  [
-    "Testing site name C",
-    "[Street address], [City]",
-    "[Opening hours]",
-    ["free", "youth-friendly"],
-    "c-peri",
-  ],
-];
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
@@ -192,7 +174,7 @@ function route() {
   if (pageName === "article") {
     art(A[articleKey] ? articleKey : "hiv");
   }
-  if (pageName === "test") initTestPage();
+
 
   $$(".links a").forEach((link) => {
     const active = link.dataset.r === (pageName === "article" ? "learn" : pageName);
@@ -215,7 +197,7 @@ function art(key) {
   $("#ah").innerHTML = copy.h;
 
   let output =
-    `<p><span class="mini">${translated ? UI_FIL["Reviewed by [Partner name]"] : "Reviewed by [Partner name]"}</span><span class="mini">${translated ? UI_FIL["Updated [date]"] : "Updated [date]"}</span></p>`;
+    `<p><span class="mini">${translated ? UI_FIL["Draft: sources checked against CDC and WHO"] : "Draft: sources checked against CDC and WHO"}</span><span class="mini">${translated ? UI_FIL["Updated Nov 23, 2026"] : "Updated Nov 23, 2026"}</span></p>`;
 
   copy.s.forEach((section) => {
     if (section[0] === "M") {
@@ -259,61 +241,6 @@ function art(key) {
     .join("");
 }
 
-let selectedFilters = new Set();
-let siteAnimationTimer;
-
-function sites(animate = false) {
-  const query = $("#q").value.toLowerCase();
-  const results = S.filter(
-    (site) =>
-      [...selectedFilters].every((filter) => site[3].includes(filter)) &&
-      (!query || (site[0] + site[1]).toLowerCase().includes(query)),
-  );
-
-  const resultsList = $("#sl");
-  resultsList.innerHTML = results.length
-    ? results
-        .map(
-          (site) => `
-      <div class="card ${site[4]} site">
-        <span class="sample">${translated ? UI_FIL["sample data"] : "sample data"}</span>
-        <h3>${site[0]}</h3>
-        <p>${site[1]}<br>${site[2]}</p>
-        ${site[3].map((filter) => `<span class="mini">${translated ? UI_FIL[filter] : filter}</span>`).join("")}
-        <p class="note" style="margin-top:10px">${translated ? UI_FIL["Last verified: [date]"] : "Last verified: [date]"}</p>
-      </div>
-    `,
-        )
-        .join("")
-    : `<div class="panel">${translated ? UI_FIL["No sample sites match. Try fewer filters or another city."] : "No sample sites match. Try fewer filters or another city."}</div>`;
-
-  if (animate && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    clearTimeout(siteAnimationTimer);
-    resultsList.classList.remove("is-updating");
-    void resultsList.offsetWidth;
-    resultsList.classList.add("is-updating");
-    siteAnimationTimer = setTimeout(
-      () => resultsList.classList.remove("is-updating"),
-      220,
-    );
-  }
-}
-
-function initTestPage() {
-  $$(".chip").forEach((chip) => {
-    chip.onclick = () => {
-      const filter = chip.dataset.t;
-      selectedFilters.has(filter)
-        ? selectedFilters.delete(filter)
-        : selectedFilters.add(filter);
-      chip.setAttribute("aria-pressed", selectedFilters.has(filter));
-      sites(true);
-    };
-  });
-  $("#qb").onclick = () => sites(true);
-  $("#q").oninput = () => sites();
-  sites();
-}
 
 function initForms() {
   $$("form").forEach((form) => {
@@ -568,18 +495,28 @@ function applyLanguage() {
   );
 }
 
-$("#lang").onclick = () => {
-  translated = !translated;
-  try {
-    localStorage.setItem("glang", translated ? "fil" : "en");
-  } catch (error) {}
-  if (document.body.dataset.page === "article") {
-    const articleKey = location.hash.slice(1).replace(/^a-/, "") || "hiv";
-    art(A[articleKey] ? articleKey : "hiv");
-  }
-  if (document.body.dataset.page === "test") sites();
-  applyLanguage();
-};
+const languageButton = $("#lang");
+
+if (languageButton) {
+  languageButton.onclick = () => {
+    translated = !translated;
+
+    try {
+      localStorage.setItem("glang", translated ? "fil" : "en");
+    } catch (error) {}
+
+    if (document.body.dataset.page === "article") {
+      const articleKey = location.hash.slice(1).replace(/^a-/, "") || "hiv";
+      art(A[articleKey] ? articleKey : "hiv");
+    }
+
+    if (document.body.dataset.page === "test") {
+      renderSites();
+    }
+
+    applyLanguage();
+  };
+}
 
 document.addEventListener("sitecomponentsready", applyLanguage);
 addEventListener("hashchange", route);
