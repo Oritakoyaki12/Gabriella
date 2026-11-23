@@ -1661,7 +1661,8 @@ footer a {
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
       "brand language"
-      "links links";
+      "links links"
+      "nav-test nav-test";
     gap: 8px;
     padding: 10px 12px;
     border-radius: 24px;
@@ -1687,6 +1688,13 @@ footer a {
     grid-area: language;
     white-space: nowrap;
   }
+
+  .btn.nav-test {
+    grid-area: nav-test;
+    justify-self: stretch;
+    text-align: center;
+    background: var(--navy);
+  }
 }
 
 @media (max-width: 600px) {
@@ -1709,7 +1717,8 @@ footer a {
   .nav {
     grid-template-areas:
       "brand language"
-      "links links";
+      "links links"
+      "nav-test nav-test";
     padding: 10px;
   }
 
@@ -1983,6 +1992,14 @@ body[data-page="home"] .why-section {
   background: var(--rose);
   color: var(--cream);
   border: 1.5px solid var(--rose);
+}
+
+.btn.nav-test {
+  background: var(--rose);
+  color: var(--cream);
+  border: 1.5px solid var(--rose);
+  white-space: nowrap;
+  padding: 10px 16px;
 }
 
 .btn.explore {

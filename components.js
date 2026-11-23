@@ -8,6 +8,7 @@ const Header = () => `
       <a href="membership.html" data-r="membership" data-fil="Pagiging miyembro">Membership</a>
       <a href="contact.html" data-r="contact" data-fil="Makipag-ugnayan">Contact</a>
     </div>
+    <a class="btn nav-test" href="test.html" data-fil="Magpa-test">Get Tested</a>
     <button class="lang language-button" id="lang" type="button" aria-label="Switch language" title="Switch language" aria-pressed="false">
       <span class="language-option" data-language="en">EN</span>
       <span class="language-option" data-language="fil">FIL</span>
