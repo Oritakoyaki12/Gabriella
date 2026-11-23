@@ -1794,11 +1794,8 @@ footer {
 }
 
 .why-section .why-stat-card .sample {
-  position: absolute;
-  z-index: 1;
-  top: 12%;
-  right: 18%;
-  margin: 0;
+  position: static;
+  display: inline-block;
 }
 
 .why-section .why-stat-card h3 {
@@ -1967,6 +1964,14 @@ body[data-page="home"] .why-section {
 .panel.contact p {
   margin: 0;
   line-height: 2.5;
+}
+
+.why-stat-card .sample {
+  margin-bottom: 12px;
+}
+
+.why-stat-card h3 {
+  margin-top: 8px;
 }
 
 /*Testing Site: 2024-06-10*/
@@ -2181,3 +2186,5 @@ body[data-page="test"] .directory-notice {
     padding: 20px;
   }
 }
+
+
