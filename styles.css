@@ -1258,20 +1258,8 @@ hr {
 }
 
 .form-page-layout > .card.c-navy {
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, .14),
-      rgba(255, 255, 255, .04) 55%
-    ),
-    rgba(8, 11, 53, .82);
+  background-color: var(--navy);
   color: var(--cream);
-  border: 1px solid rgba(255, 243, 234, .34);
-  box-shadow:
-    0 22px 50px rgba(8, 11, 53, .32),
-    inset 0 1px 0 rgba(255, 255, 255, .35);
-  -webkit-backdrop-filter: blur(18px) saturate(135%);
-  backdrop-filter: blur(18px) saturate(135%);
 }
 
 .form-page-layout .panel {
@@ -1708,7 +1696,11 @@ h1 .pill {
 }
 
 .dot {
-  color: var(--rose);
+  color: var(--red);
+}
+
+.dot.membership, .dot.contact {
+  color: var(--navy);
 }
 
 .btn.secondary,
@@ -1915,6 +1907,16 @@ body[data-page="home"] .why-section {
   border: 1.5px solid var(--pink);
 }
 
+.btn.message,.btn.join.community{
+  background: var(--cream);
+  color: var(--navy);
+  border: 1.5px solid var(--cream);
+}
+.btn.message:hover {
+  background: #F5F5F5;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(8, 11, 53, .32);
+}
 .panel.home-join {
   background: var(--navy);
   border-color: var(--navy);
@@ -1933,4 +1935,36 @@ body[data-page="home"] .why-section {
     background .18s ease,
     transform .18s ease,
     box-shadow .18s ease;
+}
+
+.home-join-actions .btn:hover {
+  background: #F5F5F5;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(8, 11, 53, .32);
+}
+
+.panel.contact, .panel.membership {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  gap: 12px;
+
+  color: var(--cream);
+  background: var(--navy);
+  padding: 24px;
+  height: 230px;
+  box-sizing: border-box;
+}
+
+.disp.contact, .disp.membership {
+  margin: 0;
+  color: var(--cream);
+  font-size: 40px;
+}
+
+.panel.contact p {
+  margin: 0;
+  line-height: 2.5;
 }
