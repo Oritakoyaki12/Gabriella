@@ -1787,7 +1787,7 @@ h1 .pill {
 }
 
 .dot.membership, .dot.contact {
-  color: var(--navy);
+  color: var(--pink);
 }
 
 .btn.secondary,
