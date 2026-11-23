@@ -260,8 +260,9 @@ function art(key) {
 }
 
 let selectedFilters = new Set();
+let siteAnimationTimer;
 
-function sites() {
+function sites(animate = false) {
   const query = $("#q").value.toLowerCase();
   const results = S.filter(
     (site) =>
@@ -269,7 +270,8 @@ function sites() {
       (!query || (site[0] + site[1]).toLowerCase().includes(query)),
   );
 
-  $("#sl").innerHTML = results.length
+  const resultsList = $("#sl");
+  resultsList.innerHTML = results.length
     ? results
         .map(
           (site) => `
@@ -284,6 +286,17 @@ function sites() {
         )
         .join("")
     : `<div class="panel">${translated ? UI_FIL["No sample sites match. Try fewer filters or another city."] : "No sample sites match. Try fewer filters or another city."}</div>`;
+
+  if (animate && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    clearTimeout(siteAnimationTimer);
+    resultsList.classList.remove("is-updating");
+    void resultsList.offsetWidth;
+    resultsList.classList.add("is-updating");
+    siteAnimationTimer = setTimeout(
+      () => resultsList.classList.remove("is-updating"),
+      220,
+    );
+  }
 }
 
 function initTestPage() {
@@ -294,11 +307,11 @@ function initTestPage() {
         ? selectedFilters.delete(filter)
         : selectedFilters.add(filter);
       chip.setAttribute("aria-pressed", selectedFilters.has(filter));
-      sites();
+      sites(true);
     };
   });
-  $("#qb").onclick = sites;
-  $("#q").oninput = sites;
+  $("#qb").onclick = () => sites(true);
+  $("#q").oninput = () => sites();
   sites();
 }
 
@@ -306,9 +319,64 @@ function initForms() {
   $$("form").forEach((form) => {
     form.onsubmit = (event) => {
       event.preventDefault();
+      const confirmation = document.getElementById(form.dataset.ok);
+      if (!confirmation) {
+        throw new Error(`Missing form confirmation: ${form.dataset.ok}`);
+      }
       form.style.display = "none";
-      $("#" + form.dataset.ok).style.display = "block";
+      confirmation.style.display = "block";
+      confirmation.classList.add("is-visible");
     };
+  });
+}
+
+function initLearnCardAnimation() {
+  const grid = $(".learn-topic-grid");
+  if (
+    !grid ||
+    matchMedia("(prefers-reduced-motion: reduce)").matches ||
+    !("IntersectionObserver" in window)
+  ) {
+    return;
+  }
+
+  grid.classList.add("is-pending");
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        grid.classList.remove("is-pending");
+        grid.classList.add("is-visible");
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.15 },
+  );
+  observer.observe(grid);
+}
+
+function initLearnCardPopovers() {
+  $$(".learn-topic-grid > .card").forEach((card) => {
+    let timer;
+    const showPreviewAfterDelay = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => card.classList.add("is-preview-open"), 500);
+    };
+    const hidePreview = () => {
+      clearTimeout(timer);
+      timer = undefined;
+      card.classList.remove("is-preview-open");
+    };
+
+    card.addEventListener("pointerenter", (event) => {
+      if (event.pointerType !== "touch") showPreviewAfterDelay();
+    });
+    card.addEventListener("pointerleave", () => {
+      if (!card.matches(":focus-within")) hidePreview();
+    });
+    card.addEventListener("focus", showPreviewAfterDelay);
+    card.addEventListener("blur", () => {
+      if (!card.matches(":hover")) hidePreview();
+    });
   });
 }
 
@@ -517,6 +585,8 @@ document.addEventListener("sitecomponentsready", applyLanguage);
 addEventListener("hashchange", route);
 route();
 initWhyStat();
+initLearnCardAnimation();
+initLearnCardPopovers();
 initHomeExploreAnimation();
 initHomeFeatureAnimations();
 initHomeBackgroundParallax();

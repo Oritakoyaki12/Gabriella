@@ -520,6 +520,17 @@ h1 .co {
     transition: none !important;
   }
 
+  .learn-topic-grid.is-pending .card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .learn-topic-grid.is-visible .card,
+  .ok.is-visible,
+  #sl.is-updating {
+    animation: none !important;
+  }
+
   body[data-page="home"] .home-explore.is-visible {
     animation: none !important;
   }
@@ -606,6 +617,78 @@ h1 .co {
 
 .grid.staggered .num {
   align-self: flex-start;
+}
+
+@keyframes learn-card-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.learn-topic-grid.is-pending .card {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.learn-topic-grid.is-visible .card {
+  animation: learn-card-reveal 240ms ease-out both;
+}
+
+.learn-topic-grid.is-visible .card:nth-child(2) {
+  animation-delay: 50ms;
+}
+
+.learn-topic-grid.is-visible .card:nth-child(3) {
+  animation-delay: 100ms;
+}
+
+.learn-topic-grid.is-visible .card:nth-child(4) {
+  animation-delay: 150ms;
+}
+
+.learn-topic-grid {
+  overflow: visible;
+}
+
+.learn-topic-grid .card {
+  position: relative;
+  overflow: visible;
+}
+
+.learn-topic-grid .card.is-preview-open {
+  z-index: 10;
+}
+
+.learn-card-preview {
+  position: absolute;
+  z-index: 1;
+  top: calc(100% + 10px);
+  right: 14px;
+  left: 14px;
+  padding: 13px 15px;
+  border: 1px solid rgba(255, 243, 234, .24);
+  border-radius: 18px;
+  background: var(--navy);
+  box-shadow: 0 12px 28px rgba(8, 11, 53, .2);
+  color: var(--cream);
+  font-size: 14px;
+  line-height: 1.45;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.learn-topic-grid .card.is-preview-open .learn-card-preview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 body[data-page="home"] .home-pathways-grid .card {
@@ -1272,6 +1355,22 @@ textarea::placeholder {
   gap: 20px;
 }
 
+@keyframes test-results-update {
+  from {
+    opacity: .6;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#sl.is-updating {
+  animation: test-results-update 180ms ease-out both;
+}
+
 .site {
   margin-bottom: 14px;
 }
@@ -1316,6 +1415,22 @@ textarea::placeholder {
   padding: 18px;
   margin-top: 14px;
   font-weight: 700;
+}
+
+@keyframes form-confirmation-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ok.is-visible {
+  animation: form-confirmation-in 200ms ease-out both;
 }
 
 footer {
