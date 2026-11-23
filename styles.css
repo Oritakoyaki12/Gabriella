@@ -548,8 +548,8 @@ h1 .co {
   z-index: 1;
   width: 100%;
   overflow: hidden;
-  background: var(--coral);
-  color: var(--navy);
+  background: var(--navy);
+  color: var(--cream);
   transform: rotate(-1.4deg);
   margin: 40px 0;
   padding: 12px 0;
@@ -671,19 +671,20 @@ h1 .co {
 }
 
 .grid.staggered .card.c-pink {
-  background-color: rgba(255, 198, 221, .82);
+  background-color: var(--pink);
 }
 
 .grid.staggered .card.c-peri {
-  background-color: rgba(139, 135, 230, .82);
+  background-color: var(--peri);
 }
 
 .grid.staggered .card.c-coral {
-  background-color: rgba(255, 90, 60, .82);
+  background-color: var(--coral);
 }
 
-.grid.staggered .card.c-cream {
-  background-color: rgba(255, 243, 234, .82);
+.grid.staggered .card.c-navy {
+  background-color: var(--navy);
+  color: var(--cream);
 }
 
 .grid.staggered .card .go {
@@ -877,8 +878,8 @@ body[data-page="home"] .home-pathways-grid {
   min-height: 250px;
   padding: clamp(22px, 3vw, 34px);
   border-radius: 28px;
-  background: var(--cream);
-  color: var(--navy);
+  background: var(--navy);
+  color: var(--cream);
   box-shadow: 0 12px 28px rgba(8, 11, 53, .12);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
@@ -890,11 +891,9 @@ body[data-page="home"] .home-pathways-grid {
 
 .home-myth-card:nth-child(2) {
   background: var(--pink);
+  color:var(--navy);
 }
 
-.home-myth-card:nth-child(3) {
-  background: var(--peri);
-}
 
 .home-myths-section.is-visible .home-myths-content h2,
 .home-featured-section.is-visible .home-featured-content h2 {
@@ -957,7 +956,7 @@ body[data-page="home"] .home-pathways-grid {
   min-height: 100vh;
   min-height: 100svh;
   margin: 0;
-  padding: clamp(108px, 12vh, 150px) 0 clamp(64px, 10vh, 120px);
+  padding: clamp(108px, 12vh, 100px) 0 clamp(64px, 10vh, 100px);
   background: transparent;
   color: var(--cream);
 }
@@ -1868,4 +1867,70 @@ body[data-page="home"] .home-featured-section,
 body[data-page="home"] .home-partners-section,
 body[data-page="home"] .why-section {
   color: var(--navy);
+}
+
+.home-join-section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  width: 100%;
+  min-height: 100svh;
+  padding: 30px;
+  color: var(--navy);
+}
+.home-join {
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  
+}
+.home-join h2 { font-size: clamp(40px, 6vw, 72px); }
+.home-join .lead { margin: 16px auto 0; }
+.home-join-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+/* Join Our Community: periwinkle (community / creativity) */
+.btn.join {
+  background: var(--peri);
+  color: white;
+  border: 1.5px solid var(--peri);
+}
+
+
+/* Get Tested: coral (energy / primary action) */
+.btn.test {
+  background: var(--rose);
+  color: var(--cream);
+  border: 1.5px solid var(--rose);
+}
+
+.btn.explore {
+  background: var(--pink);
+  color: var(--navy);
+  border: 1.5px solid var(--pink);
+}
+
+.panel.home-join {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--cream);  
+  box-shadow:
+    0 16px 36px rgba(8, 11, 53, .18),
+    inset 0 1px 0 rgba(255, 255, 255, .16);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  backdrop-filter: blur(14px) saturate(130%);
+}
+
+.home-join-actions .btn {
+  background: var(--cream);
+  color: var(--navy);
+  transition:
+    background .18s ease,
+    transform .18s ease,
+    box-shadow .18s ease;
 }
