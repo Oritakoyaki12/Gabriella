@@ -15,14 +15,36 @@ const Header = () => `
   </nav>
 `;
 
+
+
 const Footer = () => `
   <div class="wrap">
-    <a href="privacy.html" data-fil="Patakaran sa privacy">Privacy Policy</a>
-    <a href="disclaimer.html" data-fil="Paalalang medikal">Medical Disclaimer</a>
-    <a href="contact.html" data-fil="Mga social link">Social links</a>
-    <span class="note" data-fil="Ang Gabriella ay isang independiyenteng proyektong adbokasiya. Prototype para sa klase.">Gabriella is an independent advocacy project. Prototype for class.</span>
+    <div>
+      <a href="index.html" class="logo">Gab<span>riella</span><b>.</b></a>
+      <p class="note" data-fil="Isang independiyenteng proyektong adbokasiya para sa edukasyon, kalusugang seksuwal, at pagkilos.">
+        An independent advocacy project for education, sexual health, and collective action.
+      </p>
+    </div>
+
+    <div>
+      <a href="about.html" data-fil="Tungkol sa Amin">About Us</a>
+      <a href="membership.html" data-fil="Sumali sa Komunidad">Join Our Community</a>
+      <a href="learn.html" data-fil="Matuto">Learn</a>
+      <a href="contact.html" data-fil="Makipag-ugnayan">Contact</a>
+      <a href="test.html" data-fil="Magpa-test">Get Tested</a>
+    </div>
+
+    <div>
+      <a href="privacy.html" data-fil="Patakaran sa Privacy">Privacy Policy</a>
+      <a href="disclaimer.html" data-fil="Paalalang Medikal">Medical Disclaimer</a>
+    </div>
+
+    <span class="note">
+      © ${new Date().getFullYear()} Gabriella. All rights reserved.
+    </span>
   </div>
 `;
+
 
 document.body.insertAdjacentHTML(
   "afterbegin",
