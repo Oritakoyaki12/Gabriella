@@ -22,6 +22,9 @@
 html {
   scroll-padding-top: env(safe-area-inset-top, 0px);
   height: 100%;
+  overflow-x: clip;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
 }
 
 html[data-scroll-snap="home"] {
@@ -44,7 +47,6 @@ body {
   background: var(--navy);
   color: var(--cream);
   font: 400 16px/1.6 'DM Sans', system-ui, sans-serif;
-  overflow-x: hidden;
 }
 
 body::before {
@@ -130,14 +132,13 @@ a {
   z-index: 1;
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 var(--wrap-gutter);
+  padding: 10px var(--wrap-gutter) 0;
 }
 
 header {
   position: sticky;
   top: calc(env(safe-area-inset-top, 0px) + 10px);
   z-index: 20;
-  margin-top: 10px;
 }
 
 @view-transition {
@@ -229,10 +230,20 @@ header {
 }
 
 .links {
-  display: flex;
+   display: flex;
   gap: 4px;
-  overflow-x: auto;
   max-width: 100%;
+  min-width: 0;
+  padding-block: 6px;       /* room for hover lift and focus outline */
+  margin-block: -6px;       /* cancels the padding so the navbar height doesn't change */
+  overflow-x: auto;         /* still scrolls on very narrow screens */
+  overflow-y: hidden;       /* stops the vertical scrollbar (the up/down arrows) */
+  scrollbar-width: none;    /* Firefox */
+  -ms-overflow-style: none; /* old Edge */
+}
+
+.links::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari */
 }
 
 .links a {
@@ -1109,7 +1120,7 @@ body[data-page="home"] .home-pathways-grid {
 
 .why-stat-card.is-pending {
   opacity: 0;
-  transform: translateX(32px);
+  transform: translateX(-32px);
 }
 
 .why-stat-card.is-visible {
@@ -1119,7 +1130,7 @@ body[data-page="home"] .home-pathways-grid {
 @keyframes why-stat-slide-in {
   from {
     opacity: 0;
-    transform: translateX(32px);
+    transform: translateX(-32px);
   }
 
   to {
@@ -1527,10 +1538,6 @@ footer a {
 }
 
 @media (max-width: 760px) {
-  body {
-    padding-bottom: 68px;
-  }
-
   .ticker {
     transform: none;
   }
